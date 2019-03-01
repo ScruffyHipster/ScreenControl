@@ -12,10 +12,27 @@ import UIKit
 
 enum CollectionViewCellIdentifiers {
 	case HomeViewCell
+	case TimeScreenCell
 	var identifier: String {
 		switch self {
 		case .HomeViewCell:
 			return "HomeViewCell"
+		case .TimeScreenCell:
+			return "TimeScreenViewCell"
 		}
 	}
 }
+
+enum ViewControllerNibIdentifiers {
+	case popUpCardViewController
+	
+	var identifier: String {
+		return "PopUpCardViewController"
+	}
+}
+
+enum PopUpCardViewState {
+	case extended
+	case collapsed
+}
+

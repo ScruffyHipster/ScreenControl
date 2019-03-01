@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
 	weak var mainCoordinator: MainCoordinator?
 	var collectionViewDataSource: CollectionViewDataSource = {
 		let ds = CollectionViewDataSource()
-		ds.populateData(with: dataSource)
+		ds.populateData(with: homeScreenDataSource)
 		return ds
 	}()
 	
@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
 		setUpCollectionViewLayout()
 		collectionView.dataSource = collectionViewDataSource
 		collectionView.delegate = self
+		collectionView.isScrollEnabled = false
 	}
 	
 	func setUpCollectionViewLayout() {
@@ -51,10 +52,14 @@ class HomeViewController: UIViewController {
 
 //MARK:- CollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
-	
 	//MARK:- Delegate
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		print("tapped")
+		switch indexPath.row {
+		case 0:
+			mainCoordinator?.timeSelection()
+		default:
+			print("Tapped")
+		}
 	}
 }
 

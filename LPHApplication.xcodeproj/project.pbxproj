@@ -23,6 +23,11 @@
 		4AC742132226DAEE00D1F4D5 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC742122226DAEE00D1F4D5 /* HomeViewCell.xib */; };
 		4AC742172226DB2A00D1F4D5 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC742162226DB2A00D1F4D5 /* HomeViewCell.swift */; };
 		4AC7421922283AB700D1F4D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC7421822283AB600D1F4D5 /* Assets.xcassets */; };
+		4AC7421B2228516E00D1F4D5 /* TimeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC7421A2228516E00D1F4D5 /* TimeScreenViewController.swift */; };
+		4AC7421E2228555100D1F4D5 /* TimeScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC7421D2228555100D1F4D5 /* TimeScreenCell.swift */; };
+		4AC74221222855CC00D1F4D5 /* TimeScreenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC74220222855CC00D1F4D5 /* TimeScreenCell.xib */; };
+		4AC742322229537D00D1F4D5 /* PopUpCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC742302229537D00D1F4D5 /* PopUpCardViewController.swift */; };
+		4AC742332229537D00D1F4D5 /* PopUpCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC742312229537D00D1F4D5 /* PopUpCardViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		4AC742122226DAEE00D1F4D5 /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
 		4AC742162226DB2A00D1F4D5 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		4AC7421822283AB600D1F4D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AC7421A2228516E00D1F4D5 /* TimeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScreenViewController.swift; sourceTree = "<group>"; };
+		4AC7421D2228555100D1F4D5 /* TimeScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScreenCell.swift; sourceTree = "<group>"; };
+		4AC74220222855CC00D1F4D5 /* TimeScreenCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeScreenCell.xib; sourceTree = "<group>"; };
+		4AC742302229537D00D1F4D5 /* PopUpCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpCardViewController.swift; sourceTree = "<group>"; };
+		4AC742312229537D00D1F4D5 /* PopUpCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpCardViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +105,7 @@
 		4AC741F82226C76200D1F4D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4AC7421C2228517800D1F4D5 /* TimeVC */,
 				4AC742022226CADA00D1F4D5 /* HomeVC */,
 			);
 			path = Controllers;
@@ -104,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				4AC741FE2226C84000D1F4D5 /* MainCoordinator.swift */,
-				4AC742002226C90E00D1F4D5 /* Storyboarded.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -122,6 +132,7 @@
 		4AC741FB2226C77C00D1F4D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4AC742342229538900D1F4D5 /* ViewControllers */,
 				4AC742142226DAF400D1F4D5 /* CollectionViewCells */,
 			);
 			path = Views;
@@ -148,6 +159,7 @@
 			children = (
 				4AC741FC2226C79100D1F4D5 /* Coordinator.swift */,
 				4AC742072226CC9B00D1F4D5 /* DataHandler.swift */,
+				4AC742002226C90E00D1F4D5 /* Storyboarded.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -163,6 +175,7 @@
 		4AC742142226DAF400D1F4D5 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				4AC7421F222855B800D1F4D5 /* TimeScreenCell */,
 				4AC742152226DAFC00D1F4D5 /* HomeViewCell */,
 			);
 			path = CollectionViewCells;
@@ -175,6 +188,40 @@
 				4AC742162226DB2A00D1F4D5 /* HomeViewCell.swift */,
 			);
 			path = HomeViewCell;
+			sourceTree = "<group>";
+		};
+		4AC7421C2228517800D1F4D5 /* TimeVC */ = {
+			isa = PBXGroup;
+			children = (
+				4AC7421A2228516E00D1F4D5 /* TimeScreenViewController.swift */,
+				4AC7423722298E6A00D1F4D5 /* PopUpCardVC */,
+			);
+			path = TimeVC;
+			sourceTree = "<group>";
+		};
+		4AC7421F222855B800D1F4D5 /* TimeScreenCell */ = {
+			isa = PBXGroup;
+			children = (
+				4AC74220222855CC00D1F4D5 /* TimeScreenCell.xib */,
+				4AC7421D2228555100D1F4D5 /* TimeScreenCell.swift */,
+			);
+			path = TimeScreenCell;
+			sourceTree = "<group>";
+		};
+		4AC742342229538900D1F4D5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4AC742312229537D00D1F4D5 /* PopUpCardViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4AC7423722298E6A00D1F4D5 /* PopUpCardVC */ = {
+			isa = PBXGroup;
+			children = (
+				4AC742302229537D00D1F4D5 /* PopUpCardViewController.swift */,
+			);
+			path = PopUpCardVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AC74221222855CC00D1F4D5 /* TimeScreenCell.xib in Resources */,
+				4AC742332229537D00D1F4D5 /* PopUpCardViewController.xib in Resources */,
 				4A5E14CC2223F4DE00E1F44E /* LaunchScreen.storyboard in Resources */,
 				4AC742132226DAEE00D1F4D5 /* HomeViewCell.xib in Resources */,
 				4AC7421922283AB700D1F4D5 /* Assets.xcassets in Resources */,
@@ -255,11 +304,14 @@
 				4AC7420A2226CF1700D1F4D5 /* Helpers.swift in Sources */,
 				4AC741FF2226C84000D1F4D5 /* MainCoordinator.swift in Sources */,
 				4AC742082226CC9B00D1F4D5 /* DataHandler.swift in Sources */,
+				4AC7421B2228516E00D1F4D5 /* TimeScreenViewController.swift in Sources */,
 				4A5E14BF2223F4DD00E1F44E /* AppDelegate.swift in Sources */,
 				4AC742172226DB2A00D1F4D5 /* HomeViewCell.swift in Sources */,
 				4AC742012226C90E00D1F4D5 /* Storyboarded.swift in Sources */,
+				4AC742322229537D00D1F4D5 /* PopUpCardViewController.swift in Sources */,
 				4AC742062226CC0E00D1F4D5 /* DataSource.swift in Sources */,
 				4AC742112226D8BF00D1F4D5 /* Enums.swift in Sources */,
+				4AC7421E2228555100D1F4D5 /* TimeScreenCell.swift in Sources */,
 				4AC742042226CC0600D1F4D5 /* CollectionViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

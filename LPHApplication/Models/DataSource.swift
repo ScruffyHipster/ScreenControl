@@ -14,3 +14,8 @@ struct Features {
 	var infoText: String
 	var image: String
 }
+
+struct TimeSelection {
+	var theatrenName: String
+	var timeToGo: String
+}

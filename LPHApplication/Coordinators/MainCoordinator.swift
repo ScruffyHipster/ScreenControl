@@ -30,5 +30,11 @@ class MainCoordinator: Coordinator {
 		navigationController.pushViewController(vc, animated: false)
 	}
 	
+	func timeSelection() {
+		let vc = TimeScreenViewController.instantiate()
+		vc.coordinator = self
+		navigationController.pushViewController(vc, animated: true)
+	}
+	
 	
 }

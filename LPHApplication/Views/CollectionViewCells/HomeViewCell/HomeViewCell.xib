@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="jCB-CU-jki">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="charcoal" translatesAutoresizingMaskIntoConstraints="NO" id="jCB-CU-jki">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nad-YU-rjA">
@@ -80,6 +80,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="GradientRectangle" width="300" height="200"/>
+        <image name="charcoal" width="300" height="200"/>
     </resources>
 </document>
