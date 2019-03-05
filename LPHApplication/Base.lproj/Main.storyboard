@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="166.66666666666669" y="27.455357142857142"/>
         </scene>
-        <!--Time Screen View Controller-->
+        <!--Time Selection-->
         <scene sceneID="ACg-Tk-NII">
             <objects>
-                <viewController storyboardIdentifier="TimeScreenViewController" id="bsN-qr-1tF" customClass="TimeScreenViewController" customModule="LPHApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimeScreenViewController" title="Time Selection" id="bsN-qr-1tF" customClass="TimeScreenViewController" customModule="LPHApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yhX-Ym-A4A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,6 +83,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RkB-wS-rN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="942" y="27"/>
+        </scene>
+        <!--Emergency-->
+        <scene sceneID="TVU-s3-eX5">
+            <objects>
+                <viewController storyboardIdentifier="EmergencyViewController" title="Emergency" id="Bmd-xY-32u" customClass="EmergencyViewController" customModule="LPHApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MbT-Ln-xBG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the event of an emergency. Tap button below to initiate emergency screen content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqn-dJ-Qzh">
+                                <rect key="frame" x="78" y="108" width="259" height="131.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GN2-vg-jce">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="M9F-DO-FYS"/>
+                                    <constraint firstAttribute="height" constant="200" id="iHW-29-fH5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VE0-CF-YxM">
+                                <rect key="frame" x="146" y="669" width="123" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VE0-CF-YxM" firstAttribute="leading" secondItem="GXK-jI-EO9" secondAttribute="leading" constant="146" id="7sZ-3Y-84p"/>
+                            <constraint firstItem="GXK-jI-EO9" firstAttribute="trailing" secondItem="VE0-CF-YxM" secondAttribute="trailing" constant="145" id="JEl-Ej-01E"/>
+                            <constraint firstItem="GN2-vg-jce" firstAttribute="top" secondItem="Vqn-dJ-Qzh" secondAttribute="bottom" constant="108.5" id="JLm-x1-Fh9"/>
+                            <constraint firstItem="GN2-vg-jce" firstAttribute="leading" secondItem="GXK-jI-EO9" secondAttribute="leading" constant="107" id="QZU-hD-Qrm"/>
+                            <constraint firstItem="GXK-jI-EO9" firstAttribute="bottom" secondItem="VE0-CF-YxM" secondAttribute="bottom" constant="163" id="Tut-xN-IL6"/>
+                            <constraint firstItem="GXK-jI-EO9" firstAttribute="trailing" secondItem="Vqn-dJ-Qzh" secondAttribute="trailing" constant="77" id="hLo-NK-7Ea"/>
+                            <constraint firstItem="GXK-jI-EO9" firstAttribute="trailing" secondItem="GN2-vg-jce" secondAttribute="trailing" constant="107" id="mqr-ZS-fo9"/>
+                            <constraint firstItem="Vqn-dJ-Qzh" firstAttribute="top" secondItem="GXK-jI-EO9" secondAttribute="top" constant="64" id="pWN-0K-dD6"/>
+                            <constraint firstItem="VE0-CF-YxM" firstAttribute="top" secondItem="GN2-vg-jce" secondAttribute="bottom" constant="121" id="uGc-Uw-fGR"/>
+                            <constraint firstItem="Vqn-dJ-Qzh" firstAttribute="leading" secondItem="GXK-jI-EO9" secondAttribute="leading" constant="78" id="uM8-oy-Xse"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GXK-jI-EO9"/>
+                    </view>
+                    <connections>
+                        <outlet property="emergencyInfoLabel" destination="Vqn-dJ-Qzh" id="L7p-f7-Twg"/>
+                        <outlet property="emergencyInitiateButton" destination="GN2-vg-jce" id="geN-01-2Qh"/>
+                        <outlet property="sendButton" destination="VE0-CF-YxM" id="Jlk-eL-WyA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfY-sc-KSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1719" y="27"/>
         </scene>
     </scenes>
 </document>

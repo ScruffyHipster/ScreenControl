@@ -36,5 +36,16 @@ class MainCoordinator: Coordinator {
 		navigationController.pushViewController(vc, animated: true)
 	}
 	
+	func emergencyController() {
+		let vc = EmergencyViewController.instantiate()
+		vc.coordinator = self
+		navigationController.pushViewController(vc, animated: true)
+	}
+	
+	func dealsController() {
+		let vc = DealsViewController.instantiate()
+		vc.coordinator = self
+		navigationController.pushViewController(vc, animated: true)
+	}
 	
 }

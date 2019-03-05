@@ -57,6 +57,8 @@ extension HomeViewController: UICollectionViewDelegate {
 		switch indexPath.row {
 		case 0:
 			mainCoordinator?.timeSelection()
+		case 1:
+			mainCoordinator?.emergencyController()
 		default:
 			print("Tapped")
 		}

@@ -12,6 +12,8 @@
 		4A5E14C42223F4DD00E1F44E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5E14C22223F4DD00E1F44E /* Main.storyboard */; };
 		4A5E14C72223F4DD00E1F44E /* LPHApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E14C52223F4DD00E1F44E /* LPHApplication.xcdatamodeld */; };
 		4A5E14CC2223F4DE00E1F44E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5E14CA2223F4DE00E1F44E /* LaunchScreen.storyboard */; };
+		4ABBD70B222EE4A000C803AF /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABBD70A222EE4A000C803AF /* EmergencyViewController.swift */; };
+		4ABBD70D222EEA7B00C803AF /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABBD70C222EEA7B00C803AF /* DealsViewController.swift */; };
 		4AC741FD2226C79100D1F4D5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC741FC2226C79100D1F4D5 /* Coordinator.swift */; };
 		4AC741FF2226C84000D1F4D5 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC741FE2226C84000D1F4D5 /* MainCoordinator.swift */; };
 		4AC742012226C90E00D1F4D5 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC742002226C90E00D1F4D5 /* Storyboarded.swift */; };
@@ -38,6 +40,8 @@
 		4A5E14C62223F4DD00E1F44E /* LPHApplication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LPHApplication.xcdatamodel; sourceTree = "<group>"; };
 		4A5E14CB2223F4DE00E1F44E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A5E14CD2223F4DE00E1F44E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ABBD70A222EE4A000C803AF /* EmergencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
+		4ABBD70C222EEA7B00C803AF /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
 		4AC741FC2226C79100D1F4D5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4AC741FE2226C84000D1F4D5 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		4AC742002226C90E00D1F4D5 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -102,9 +106,27 @@
 			path = LPHApplication;
 			sourceTree = "<group>";
 		};
+		4ABBD709222EE47C00C803AF /* EmergencyVC */ = {
+			isa = PBXGroup;
+			children = (
+				4ABBD70A222EE4A000C803AF /* EmergencyViewController.swift */,
+			);
+			path = EmergencyVC;
+			sourceTree = "<group>";
+		};
+		4ABBD70E222EEA8400C803AF /* DealsVC */ = {
+			isa = PBXGroup;
+			children = (
+				4ABBD70C222EEA7B00C803AF /* DealsViewController.swift */,
+			);
+			path = DealsVC;
+			sourceTree = "<group>";
+		};
 		4AC741F82226C76200D1F4D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4ABBD70E222EEA8400C803AF /* DealsVC */,
+				4ABBD709222EE47C00C803AF /* EmergencyVC */,
 				4AC7421C2228517800D1F4D5 /* TimeVC */,
 				4AC742022226CADA00D1F4D5 /* HomeVC */,
 			);
@@ -304,6 +326,7 @@
 				4AC7420A2226CF1700D1F4D5 /* Helpers.swift in Sources */,
 				4AC741FF2226C84000D1F4D5 /* MainCoordinator.swift in Sources */,
 				4AC742082226CC9B00D1F4D5 /* DataHandler.swift in Sources */,
+				4ABBD70B222EE4A000C803AF /* EmergencyViewController.swift in Sources */,
 				4AC7421B2228516E00D1F4D5 /* TimeScreenViewController.swift in Sources */,
 				4A5E14BF2223F4DD00E1F44E /* AppDelegate.swift in Sources */,
 				4AC742172226DB2A00D1F4D5 /* HomeViewCell.swift in Sources */,
@@ -312,6 +335,7 @@
 				4AC742062226CC0E00D1F4D5 /* DataSource.swift in Sources */,
 				4AC742112226D8BF00D1F4D5 /* Enums.swift in Sources */,
 				4AC7421E2228555100D1F4D5 /* TimeScreenCell.swift in Sources */,
+				4ABBD70D222EEA7B00C803AF /* DealsViewController.swift in Sources */,
 				4AC742042226CC0600D1F4D5 /* CollectionViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
