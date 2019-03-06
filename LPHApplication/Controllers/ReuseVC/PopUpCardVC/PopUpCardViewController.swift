@@ -12,6 +12,15 @@ class PopUpCardViewController: UIViewController {
 	
 	
 	//MARK:- Properties
+	var viewUseState: ReusableCollectionViewState?
+	lazy var timeView: TimeSelectionView = {
+		let view = TimeSelectionView()
+		return view
+	}()
+	lazy var dealsView: DealsSelectionView = {
+		let view = DealsSelectionView()
+		return view
+	}()
 	
 	//MARK:- Outlets
 	
@@ -36,6 +45,19 @@ class PopUpCardViewController: UIViewController {
 		self.view.layer.shadowOffset = CGSize(width: 0, height: -2)
 		self.view.layer.masksToBounds = false
 		self.view.backgroundColor = UIColor.clear
+		//Set state
+		guard let viewState = viewUseState else {return}
+		switch viewState {
+		case .Timer:
+			let view = timeView.load()
+			contentView.addSubview(view)
+			break
+		case .Deals:
+			let view = dealsView.load()
+			contentView.addSubview(view)
+			break
+		}
+		
 	}
 }
 

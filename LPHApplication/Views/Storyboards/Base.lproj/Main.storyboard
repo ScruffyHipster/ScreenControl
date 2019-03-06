@@ -50,7 +50,7 @@
         <!--Time Selection-->
         <scene sceneID="ACg-Tk-NII">
             <objects>
-                <viewController storyboardIdentifier="TimeScreenViewController" title="Time Selection" id="bsN-qr-1tF" customClass="TimeScreenViewController" customModule="LPHApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReusableCollectionViewController" title="Time Selection" id="bsN-qr-1tF" customClass="ReusableCollectionViewController" customModule="LPHApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yhX-Ym-A4A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

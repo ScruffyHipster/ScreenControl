@@ -60,7 +60,7 @@ extension HomeViewController: UICollectionViewDelegate {
 		case 1:
 			mainCoordinator?.emergencyController()
 		default:
-			print("Tapped")
+			mainCoordinator?.dealsController()
 		}
 	}
 }

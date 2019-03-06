@@ -31,8 +31,10 @@ class MainCoordinator: Coordinator {
 	}
 	
 	func timeSelection() {
-		let vc = TimeScreenViewController.instantiate()
+		let vc = ReusableCollectionViewController.instantiate()
 		vc.coordinator = self
+		vc.viewUseState = ReusableCollectionViewState.Timer
+		vc.navigationItem.title = "Time Selection"
 		navigationController.pushViewController(vc, animated: true)
 	}
 	
@@ -43,8 +45,10 @@ class MainCoordinator: Coordinator {
 	}
 	
 	func dealsController() {
-		let vc = DealsViewController.instantiate()
+		let vc = ReusableCollectionViewController.instantiate()
 		vc.coordinator = self
+		vc.viewUseState = ReusableCollectionViewState.Deals
+		vc.navigationItem.title = "Deals"
 		navigationController.pushViewController(vc, animated: true)
 	}
 	
