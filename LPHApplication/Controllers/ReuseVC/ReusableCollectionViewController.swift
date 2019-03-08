@@ -12,9 +12,18 @@ class ReusableCollectionViewController: UIViewController {
 	
 	//MARK:- Outlets
 	@IBOutlet weak var collectionView: UICollectionView!
+	@IBOutlet weak var instructionLabel: UILabel! {
+		didSet {
+			if viewUseState == ReusableCollectionViewState.Deals {
+				instructionLabel.text = "Add deals"
+			} else {
+				instructionLabel.text = "Add time"
+			}
+		}
+	}
 	
 	//MARK:- Properties
-	weak var coordinator: MainCoordinator?
+	weak var coordinator: ReusableViewCoordinator?
 	lazy var collectionViewDataSource: CollectionViewDataSource = {
 		let ds = CollectionViewDataSource()
 		return ds

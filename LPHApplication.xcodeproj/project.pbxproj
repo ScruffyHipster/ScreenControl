@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A2057CC2232DA200094745C /* ReusableViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2057CB2232DA200094745C /* ReusableViewCoordinator.swift */; };
 		4A5E14BF2223F4DD00E1F44E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E14BE2223F4DD00E1F44E /* AppDelegate.swift */; };
 		4A5E14C12223F4DD00E1F44E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E14C02223F4DD00E1F44E /* HomeViewController.swift */; };
 		4A5E14C42223F4DD00E1F44E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5E14C22223F4DD00E1F44E /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A2057CB2232DA200094745C /* ReusableViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewCoordinator.swift; sourceTree = "<group>"; };
 		4A5E14BB2223F4DD00E1F44E /* LPHApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPHApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5E14BE2223F4DD00E1F44E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A5E14C02223F4DD00E1F44E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				4AC741FE2226C84000D1F4D5 /* MainCoordinator.swift */,
+				4A2057CB2232DA200094745C /* ReusableViewCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				4A5E14C72223F4DD00E1F44E /* LPHApplication.xcdatamodeld in Sources */,
 				4AC741FD2226C79100D1F4D5 /* Coordinator.swift in Sources */,
 				4A5E14C12223F4DD00E1F44E /* HomeViewController.swift in Sources */,
+				4A2057CC2232DA200094745C /* ReusableViewCoordinator.swift in Sources */,
 				4AC7420A2226CF1700D1F4D5 /* Helpers.swift in Sources */,
 				4AC741FF2226C84000D1F4D5 /* MainCoordinator.swift in Sources */,
 				4AC742082226CC9B00D1F4D5 /* DataHandler.swift in Sources */,

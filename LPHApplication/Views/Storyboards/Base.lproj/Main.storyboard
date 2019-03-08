@@ -66,6 +66,13 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0q-rU-7IQ">
+                                <rect key="frame" x="85" y="221" width="244" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -78,11 +85,12 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="BEm-la-7Zc" id="Fkc-NN-UrG"/>
+                        <outlet property="instructionLabel" destination="B0q-rU-7IQ" id="rAc-NI-pMt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RkB-wS-rN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="27"/>
+            <point key="canvasLocation" x="940.57971014492762" y="26.785714285714285"/>
         </scene>
         <!--Emergency-->
         <scene sceneID="TVU-s3-eX5">

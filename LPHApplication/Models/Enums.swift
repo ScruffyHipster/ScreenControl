@@ -56,3 +56,51 @@ enum PopUpCardViewState {
 	case collapsed
 }
 
+enum PlayerGroupName {
+	case TheatreOne
+	case TheatreTwo
+	case TheatreThree
+	case all
+	
+	var playerGroupIdentifier: Int {
+		//numbers refer to the group on SL
+		switch self {
+		case .TheatreOne:
+			return 1
+		case .TheatreTwo:
+			return 2
+		case .TheatreThree:
+			return 3
+		case .all:
+			return 4
+		}
+	}
+}
+
+enum Interrupt {
+	case oneMinuteSign
+	case fiveMinuteSign
+	case tenMinuteSign
+	case emergency
+	case cancel
+	
+	var interruptToSend: Int {
+		switch self {
+		case .oneMinuteSign:
+			//Sends letter C
+			return 4717
+		case .fiveMinuteSign:
+			//Sends letter C
+			return 4717
+		case .tenMinuteSign:
+			//Sends letter C
+			return 4717
+		case .emergency:
+			//Sends letter Y
+			return 4720
+		case .cancel:
+			//sends letter X
+			return 4738
+		}
+	}
+}
