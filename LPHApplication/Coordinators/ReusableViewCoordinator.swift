@@ -21,18 +21,48 @@ class ReusableViewCoordinator: Coordinator {
 	
 	var viewUseState: ReusableCollectionViewState?
 	
+	var networkStatusCode: Int?
+	
 	init(navigationController: UINavigationController) {
 		self.navigationController = navigationController
 		self.networking = HTTP()
 	}
 	
+	lazy var reusableCollectionView: ReusableCollectionViewController = {
+		let vc = ReusableCollectionViewController()
+		return vc
+	}()
+	
+	//MARK:- Function Errors
+	func showSelectionError() {
+		print("Theres been an error")
+	}
+	
+	func makeNetworkRequest(group: PlayerGroupName, interrupt: Interrupt) {
+		let request = networking.createRequest(for: group, with: interrupt)
+		networking.sendRequest(url: request) { (success, statusCode) in
+			if success {
+				print("success")
+				self.networkSuccess(with: group, interrupt: interrupt)
+			} else {
+				self.networkStatusCode = statusCode
+				self.reusableCollectionView.showError(statusCode: statusCode)
+			}
+		}
+	}
+	
+	func networkSuccess(with group: PlayerGroupName, interrupt: Interrupt) {
+		reusableCollectionView.dismissPopUpView()
+		reusableCollectionView.addToCollectionView(group: group, interrupt: interrupt)
+	}
+	
 	func start() {
-		let vc = ReusableCollectionViewController.instantiate()
-		vc.coordinator = self
-		vc.viewUseState = viewUseState
-		vc.navigationItem.title = viewUseState == ReusableCollectionViewState.Timer ? "Time Selection" : "Deal selection"
-		navigationController.pushViewController(vc, animated: true)
-
+		reusableCollectionView = ReusableCollectionViewController.instantiate()
+		reusableCollectionView.coordinator = self
+		reusableCollectionView.viewUseState = viewUseState
+		reusableCollectionView.collectionViewDataSource.cellToUse = viewUseState
+		reusableCollectionView.navigationItem.title = viewUseState == ReusableCollectionViewState.Timer ? "Time Selection" : "Deal Selection"
+		navigationController.pushViewController(reusableCollectionView, animated: true)
 	}
 	
 	

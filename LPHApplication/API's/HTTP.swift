@@ -25,27 +25,28 @@ class HTTP {
 		//fetches the compatible url information
 		let group = group.playerGroupIdentifier
 		let interrupt = interrupt.interruptToSend
-		
-		let parameters = ["interrupt" : interrupt, "groups": [group], "players" : [2136], "aditionalData" : []] as [String : Any]
-		
+//		let additionalData = [["Key": "theatre", "value": String("\(group)")], ["Key": "time", "Value": "0"], ["Key": "action", "Value": "0"]]
+		let parameters = ["interrupt" : interrupt, "groups": [], "players" : [57599], "aditionalData" : []] as [String : AnyObject]
 		let urlString = "https://wbtapi.signagelive.com/networks/15479/messages/"
 		let postData = try! JSONSerialization.data(withJSONObject: parameters, options: [])
 		var request = URLRequest(url: (URL(string: urlString)!))
 		request.httpMethod = "POST"
 		request.allHTTPHeaderFields = headers
 		request.httpBody = postData
+		print(parameters)
 		return request
 	}
 	
-	func sendRequest(url: URLRequest, completion: @escaping (Bool) -> ()) {
-		let url = url
+	func sendRequest(url: URLRequest, completion: @escaping (Bool, Int) -> ()) {
 		session.dataTask(with: url) { (data, response, error) in
-			guard let response = response as? HTTPURLResponse else {return}
+			guard let response = response as? HTTPURLResponse else {
+				print("failed response")
+				return}
 			let success = self.checkResonse(responseCode: response.statusCode)
 			DispatchQueue.main.async {
-				completion(success)
+				completion(success, response.statusCode)
 			}
-		}
+		} .resume()
 	}
 	
 		func checkResonse(responseCode: Int) -> Bool {

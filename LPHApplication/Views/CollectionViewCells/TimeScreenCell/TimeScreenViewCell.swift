@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TimeSelectorCollectionViewCell: UICollectionViewCell {
+class TimeScreenViewCell: UICollectionViewCell {
 	
 	@IBOutlet weak var theatreName: UILabel!
 	@IBOutlet weak var timeToGo: UILabel!

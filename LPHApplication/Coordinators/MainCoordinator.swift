@@ -40,18 +40,18 @@ class MainCoordinator: NSObject, Coordinator {
 		child.start()
 }
 	
-	func emergencyController() {
-		let vc = EmergencyViewController.instantiate()
-		vc.coordinator = self
-		navigationController.pushViewController(vc, animated: true)
-	}
-	
 	func dealsController() {
 		let child = ReusableViewCoordinator(navigationController: navigationController)
 		child.parentCoordinator = self
 		childCoordinators.append(child)
 		child.viewUseState = ReusableCollectionViewState.Deals
 		child.start()
+	}
+
+	func emergencyController() {
+		let vc = EmergencyViewController.instantiate()
+		vc.coordinator = self
+		navigationController.pushViewController(vc, animated: true)
 	}
 	
 	func childDidFinish(_ child: Coordinator?) {

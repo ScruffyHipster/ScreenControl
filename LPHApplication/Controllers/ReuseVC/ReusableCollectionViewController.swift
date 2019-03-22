@@ -43,7 +43,7 @@ class ReusableCollectionViewController: UIViewController {
 	var compressedHeight: CGFloat = 60.0
 	var animationProperties = [UIViewPropertyAnimator]()
 	var animationProgressWasInterrupted: CGFloat = 0
-	
+	var timeSelectionArray = [TimeSelection]()
 	
 	//MARK:- Methods
     override func viewDidLoad() {
@@ -53,17 +53,58 @@ class ReusableCollectionViewController: UIViewController {
 		setUpPopUpView()
     }
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		navigationItem.rightBarButtonItem = editButtonItem
+	}
+
+	
+	override func setEditing(_ editing: Bool, animated: Bool) {
+		super.setEditing(editing, animated: animated)
+		collectionView.allowsSelection = editing
+		navigationItem.leftBarButtonItem = editing ? UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteItems)) : nil
+	}
+	
+	@objc func deleteItems() {
+	
+	}
+	
+	func showError(statusCode: Int) {
+		let alert = createAlert(title: "Network Error", message: "Sorry, theres been an error when making the request. Error code: \(statusCode)", actionTitle: "OK")
+		present(alert, animated: true)
+	}
+	
+	func addToCollectionView(group: PlayerGroupName, interrupt: Interrupt) {
+		guard let viewUseState = viewUseState else {return}
+		switch viewUseState {
+		case ReusableCollectionViewState.Timer:
+			let time = TimeSelection(theatrenName: group.playGroupString, timeToGo: interrupt.interruptString)
+			timeSelectionArray.append(time)
+			collectionViewDataSource.populateData(with: timeSelectionArray)
+			instructionLabel.alpha = 0.0
+		case ReusableCollectionViewState.Deals:
+			break
+		case ReusableCollectionViewState.Home:
+			break
+		}
+		collectionView.reloadData()
+	}
+	
+	//MARK:- CollectionView setup methods
 	func setUpCollectionView() {
 		collectionView.dataSource = collectionViewDataSource
 		collectionView.delegate = self
+		setUpCollectionViewLayout()
 		collectionView.isScrollEnabled = false
 	}
 	
 	func loadNibs() {
 		popUpcardView = PopUpCardViewController(nibName: ViewControllerNibIdentifiers.popUpCardViewController.identifier, bundle: nil)
-		guard let viewUse = viewUseState else {return}
+		guard let viewUse = viewUseState, let coord = coordinator else {return}
 		//Sets popup view to correct use state
 		popUpcardView?.viewUseState = viewUse
+		//Sets the coordinator
+		popUpcardView?.coordinator = coord
 		//Sets collection view up with the correct use NIBS
 		switch viewUse {
 		case .Deals:
@@ -74,9 +115,23 @@ class ReusableCollectionViewController: UIViewController {
 			let nib = UINib(nibName: CollectionViewCellIdentifiers.TimeScreenCell.identifier, bundle: nil)
 			collectionView.register(nib, forCellWithReuseIdentifier: CollectionViewCellIdentifiers.TimeScreenCell.identifier)
 			break
+		case .Home:
+			break
 		}
 	}
 	
+	func setUpCollectionViewLayout() {
+		let width = view.bounds.width - 20
+		let height = view.bounds.height / 4
+		let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+		layout.itemSize = CGSize(width: width, height: height)
+		layout.sectionInset = UIEdgeInsets(top: 20, left: 80, bottom: 20, right: 80)
+		layout.minimumLineSpacing = 12.0
+		layout.minimumInteritemSpacing = 10.0
+	}
+	
+	
+	//MARK:- Pop up view
 	func setUpPopUpView() {
 		guard let popUpView = popUpcardView else {return}
 		self.addChild(popUpView)
@@ -87,6 +142,11 @@ class ReusableCollectionViewController: UIViewController {
 		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleViewWasTapped(recognizer:)))
 		popUpView.handleArea.addGestureRecognizer(panGesture)
 		popUpView.handleArea.addGestureRecognizer(tapGesture)
+	}
+	
+	func dismissPopUpView() {
+		guard popUpcardView != nil else {return}
+		animateTransition(fromState: nextCardState, withDuration: 0.7)
 	}
 	
 	@objc func handleViewWasPanned(recognizer: UIPanGestureRecognizer) {

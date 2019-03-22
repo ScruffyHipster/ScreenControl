@@ -49,6 +49,7 @@ enum UIViewNibIdentifiers {
 enum ReusableCollectionViewState {
 	case Timer
 	case Deals
+	case Home
 }
 
 enum PopUpCardViewState {
@@ -73,6 +74,19 @@ enum PlayerGroupName {
 			return 3
 		case .all:
 			return 4
+		}
+	}
+	
+	var playGroupString: String {
+		switch self {
+		case .TheatreOne:
+			return "Theatre One"
+		case .TheatreTwo:
+			return "Theatre Two"
+		case .TheatreThree:
+			return "Theatre Three"
+		case .all:
+			return "All"
 		}
 	}
 }
@@ -101,6 +115,22 @@ enum Interrupt {
 		case .cancel:
 			//sends letter X
 			return 4738
+		}
+	}
+	
+	var interruptString: String {
+		switch self {
+		case .oneMinuteSign:
+			return "1 Min"
+		case .fiveMinuteSign:
+			return "5 Min"
+		case .tenMinuteSign:
+			return "10 Min"
+		case .emergency:
+			return "Emergency"
+		case .cancel:
+			//Shouldn't need to use this
+			return "Cancel"
 		}
 	}
 }

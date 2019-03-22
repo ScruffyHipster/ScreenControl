@@ -31,16 +31,18 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9b-GB-olo" userLabel="handleView">
-                            <rect key="frame" x="167" y="24" width="40" height="6"/>
+                            <rect key="frame" x="165.5" y="23" width="44" height="6"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="6" id="H6p-Wf-WBy"/>
+                                <constraint firstAttribute="width" constant="44" id="dYL-KQ-5B2"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="C9b-GB-olo" firstAttribute="top" secondItem="0Ww-pG-fr9" secondAttribute="top" constant="24" id="Ano-Rk-ctL"/>
-                        <constraint firstItem="C9b-GB-olo" firstAttribute="leading" secondItem="0Ww-pG-fr9" secondAttribute="leading" constant="167" id="HIP-Jp-dpv"/>
-                        <constraint firstAttribute="bottom" secondItem="C9b-GB-olo" secondAttribute="bottom" constant="22" id="b6v-gM-5Fw"/>
-                        <constraint firstAttribute="trailing" secondItem="C9b-GB-olo" secondAttribute="trailing" constant="168" id="ciA-vj-cKH"/>
+                        <constraint firstItem="C9b-GB-olo" firstAttribute="centerX" secondItem="0Ww-pG-fr9" secondAttribute="centerX" id="8nl-zc-cAg"/>
+                        <constraint firstItem="C9b-GB-olo" firstAttribute="centerY" secondItem="0Ww-pG-fr9" secondAttribute="centerY" id="WHa-ia-Ypc"/>
                         <constraint firstAttribute="width" constant="375" id="r7Q-Dy-x5B"/>
                         <constraint firstAttribute="height" constant="52" id="u5Z-Zh-hPJ"/>
                     </constraints>

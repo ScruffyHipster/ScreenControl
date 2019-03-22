@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A2057CC2232DA200094745C /* ReusableViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2057CB2232DA200094745C /* ReusableViewCoordinator.swift */; };
+		4A2057D02232E1580094745C /* SendNetworkRequestButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A2057CF2232E1580094745C /* SendNetworkRequestButton.xib */; };
+		4A57FF74223FCC3300ACEDC3 /* SendNetworkRequestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A57FF73223FCC3300ACEDC3 /* SendNetworkRequestButton.swift */; };
 		4A5E14BF2223F4DD00E1F44E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E14BE2223F4DD00E1F44E /* AppDelegate.swift */; };
 		4A5E14C12223F4DD00E1F44E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E14C02223F4DD00E1F44E /* HomeViewController.swift */; };
 		4A5E14C42223F4DD00E1F44E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5E14C22223F4DD00E1F44E /* Main.storyboard */; };
@@ -35,14 +37,16 @@
 		4AC742172226DB2A00D1F4D5 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC742162226DB2A00D1F4D5 /* HomeViewCell.swift */; };
 		4AC7421922283AB700D1F4D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC7421822283AB600D1F4D5 /* Assets.xcassets */; };
 		4AC7421B2228516E00D1F4D5 /* ReusableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC7421A2228516E00D1F4D5 /* ReusableCollectionViewController.swift */; };
-		4AC7421E2228555100D1F4D5 /* TimeScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC7421D2228555100D1F4D5 /* TimeScreenCell.swift */; };
-		4AC74221222855CC00D1F4D5 /* TimeScreenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC74220222855CC00D1F4D5 /* TimeScreenCell.xib */; };
+		4AC7421E2228555100D1F4D5 /* TimeScreenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC7421D2228555100D1F4D5 /* TimeScreenViewCell.swift */; };
+		4AC74221222855CC00D1F4D5 /* TimeScreenViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC74220222855CC00D1F4D5 /* TimeScreenViewCell.xib */; };
 		4AC742322229537D00D1F4D5 /* PopUpCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC742302229537D00D1F4D5 /* PopUpCardViewController.swift */; };
 		4AC742332229537D00D1F4D5 /* PopUpCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC742312229537D00D1F4D5 /* PopUpCardViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4A2057CB2232DA200094745C /* ReusableViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewCoordinator.swift; sourceTree = "<group>"; };
+		4A2057CF2232E1580094745C /* SendNetworkRequestButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendNetworkRequestButton.xib; sourceTree = "<group>"; };
+		4A57FF73223FCC3300ACEDC3 /* SendNetworkRequestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNetworkRequestButton.swift; sourceTree = "<group>"; };
 		4A5E14BB2223F4DD00E1F44E /* LPHApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPHApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5E14BE2223F4DD00E1F44E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A5E14C02223F4DD00E1F44E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -72,8 +76,8 @@
 		4AC742162226DB2A00D1F4D5 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		4AC7421822283AB600D1F4D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AC7421A2228516E00D1F4D5 /* ReusableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCollectionViewController.swift; sourceTree = "<group>"; };
-		4AC7421D2228555100D1F4D5 /* TimeScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScreenCell.swift; sourceTree = "<group>"; };
-		4AC74220222855CC00D1F4D5 /* TimeScreenCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeScreenCell.xib; sourceTree = "<group>"; };
+		4AC7421D2228555100D1F4D5 /* TimeScreenViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScreenViewCell.swift; sourceTree = "<group>"; };
+		4AC74220222855CC00D1F4D5 /* TimeScreenViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeScreenViewCell.xib; sourceTree = "<group>"; };
 		4AC742302229537D00D1F4D5 /* PopUpCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpCardViewController.swift; sourceTree = "<group>"; };
 		4AC742312229537D00D1F4D5 /* PopUpCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpCardViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A2057CD2232E1350094745C /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4A2057CE2232E13E0094745C /* Networking */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		4A2057CE2232E13E0094745C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4A2057CF2232E1580094745C /* SendNetworkRequestButton.xib */,
+				4A57FF73223FCC3300ACEDC3 /* SendNetworkRequestButton.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		4A5E14B22223F4DD00E1F44E = {
 			isa = PBXGroup;
 			children = (
@@ -211,10 +232,10 @@
 		4AC741F82226C76200D1F4D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4AC742022226CADA00D1F4D5 /* HomeVC */,
 				4ABBD70E222EEA8400C803AF /* DealsVC */,
 				4ABBD709222EE47C00C803AF /* EmergencyVC */,
 				4AC7421C2228517800D1F4D5 /* ReuseVC */,
-				4AC742022226CADA00D1F4D5 /* HomeVC */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -315,8 +336,8 @@
 		4AC7421F222855B800D1F4D5 /* TimeScreenCell */ = {
 			isa = PBXGroup;
 			children = (
-				4AC74220222855CC00D1F4D5 /* TimeScreenCell.xib */,
-				4AC7421D2228555100D1F4D5 /* TimeScreenCell.swift */,
+				4AC74220222855CC00D1F4D5 /* TimeScreenViewCell.xib */,
+				4AC7421D2228555100D1F4D5 /* TimeScreenViewCell.swift */,
 			);
 			path = TimeScreenCell;
 			sourceTree = "<group>";
@@ -324,6 +345,7 @@
 		4AC742342229538900D1F4D5 /* ViewNibs */ = {
 			isa = PBXGroup;
 			children = (
+				4A2057CD2232E1350094745C /* Buttons */,
 				4ABBD71F222FF82C00C803AF /* PopUpCardView */,
 			);
 			path = ViewNibs;
@@ -397,7 +419,8 @@
 			files = (
 				4ABBD710222FC48900C803AF /* TimeSelectionView.xib in Resources */,
 				4ABBD712222FC50500C803AF /* DealsSelectionView.xib in Resources */,
-				4AC74221222855CC00D1F4D5 /* TimeScreenCell.xib in Resources */,
+				4A2057D02232E1580094745C /* SendNetworkRequestButton.xib in Resources */,
+				4AC74221222855CC00D1F4D5 /* TimeScreenViewCell.xib in Resources */,
 				4ABBD71A222FC7C000C803AF /* DealsViewCell.xib in Resources */,
 				4AC742332229537D00D1F4D5 /* PopUpCardViewController.xib in Resources */,
 				4A5E14CC2223F4DE00E1F44E /* LaunchScreen.storyboard in Resources */,
@@ -416,6 +439,7 @@
 			files = (
 				4ABBD714222FC54700C803AF /* TimeSelectionView.swift in Sources */,
 				4A5E14C72223F4DD00E1F44E /* LPHApplication.xcdatamodeld in Sources */,
+				4A57FF74223FCC3300ACEDC3 /* SendNetworkRequestButton.swift in Sources */,
 				4AC741FD2226C79100D1F4D5 /* Coordinator.swift in Sources */,
 				4A5E14C12223F4DD00E1F44E /* HomeViewController.swift in Sources */,
 				4A2057CC2232DA200094745C /* ReusableViewCoordinator.swift in Sources */,
@@ -433,7 +457,7 @@
 				4ABBD725222FF95500C803AF /* HTTP.swift in Sources */,
 				4AC742062226CC0E00D1F4D5 /* DataSource.swift in Sources */,
 				4AC742112226D8BF00D1F4D5 /* Enums.swift in Sources */,
-				4AC7421E2228555100D1F4D5 /* TimeScreenCell.swift in Sources */,
+				4AC7421E2228555100D1F4D5 /* TimeScreenViewCell.swift in Sources */,
 				4ABBD70D222EEA7B00C803AF /* DealsViewController.swift in Sources */,
 				4AC742042226CC0600D1F4D5 /* CollectionViewDataSource.swift in Sources */,
 				4ABBD716222FC65B00C803AF /* DealsSelectionView.swift in Sources */,

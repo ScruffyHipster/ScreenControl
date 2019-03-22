@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
 	var collectionViewDataSource: CollectionViewDataSource = {
 		let ds = CollectionViewDataSource()
 		ds.populateData(with: homeScreenDataSource)
+		ds.cellToUse = ReusableCollectionViewState.Home
 		return ds
 	}()
 	
