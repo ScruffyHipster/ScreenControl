@@ -22,7 +22,7 @@ class HomeViewCell: UICollectionViewCell {
 	//MARK:- Methods
 	override func awakeFromNib() {
 		infoText.backgroundColor = .clear
-		self.layer.shadowOpacity = 0.8
+		self.layer.shadowOpacity = 0.6
 		self.layer.shadowColor = UIColor.black.cgColor
 		self.layer.shadowOffset = CGSize(width: 0, height: -1)
 		self.layer.masksToBounds = false
