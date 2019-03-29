@@ -61,6 +61,12 @@ enum PlayerGroupName {
 	case TheatreOne
 	case TheatreTwo
 	case TheatreThree
+	case Zone1
+	case Zone2
+	case Zone3
+	case Zone4
+	case Zone5
+	case Zone6
 	case all
 	
 	var playerGroupIdentifier: Int {
@@ -72,8 +78,20 @@ enum PlayerGroupName {
 			return 2
 		case .TheatreThree:
 			return 3
-		case .all:
+		case .Zone1:
 			return 4
+		case .Zone2:
+			return 5
+		case .Zone3:
+			return 6
+		case .Zone4:
+			return 7
+		case .Zone5:
+			return 8
+		case .Zone6:
+			return 9
+		case .all:
+			return 10
 		}
 	}
 	
@@ -87,6 +105,18 @@ enum PlayerGroupName {
 			return "Theatre Three"
 		case .all:
 			return "All"
+		case .Zone1:
+			return "Zone 1"
+		case .Zone2:
+			return "Zone 2"
+		case .Zone3:
+			return "Zone 3"
+		case .Zone4:
+			return "Zone 4"
+		case .Zone5:
+			return "Zone 5"
+		case .Zone6:
+			return "Zone 6"
 		}
 	}
 }
@@ -95,6 +125,9 @@ enum Interrupt {
 	case oneMinuteSign
 	case fiveMinuteSign
 	case tenMinuteSign
+	case playListOne
+	case playListTwo
+	case playListThree
 	case emergency
 	case cancel
 	
@@ -115,6 +148,15 @@ enum Interrupt {
 		case .cancel:
 			//sends letter X
 			return 4738
+		case .playListOne:
+			//sends letter E
+			return 4719
+		case .playListTwo:
+			//sends letter F
+			return 4720
+		case .playListThree:
+			//sends letter G
+			return 4721
 		}
 	}
 	
@@ -131,6 +173,12 @@ enum Interrupt {
 		case .cancel:
 			//Shouldn't need to use this
 			return "Cancel"
+		case .playListOne:
+			return "Playlist 1"
+		case .playListTwo:
+			return "Playlist 2"
+		case .playListThree:
+			return "Playlist 3"
 		}
 	}
 }

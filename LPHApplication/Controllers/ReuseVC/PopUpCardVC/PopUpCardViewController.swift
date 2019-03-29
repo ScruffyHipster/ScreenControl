@@ -58,17 +58,39 @@ class PopUpCardViewController: UIViewController {
 			let tv = (view as? TimeSelectionView)!
 			tv.cancelButton.addTarget(self, action: #selector(doSomething(_:)), for: .touchUpInside)
 			contentView.addSubview(view)
-			tv.timeSlider.addTarget(self, action: #selector(changeTimeLabel), for: .valueChanged)
+			tv.timeSlider.addTarget(self, action: #selector(changeLabels), for: .valueChanged)
 			tv.segementedTheatreSelection.addTarget(self, action: #selector(changeTheatreSelection), for: .valueChanged)
 			tv.sendRequest.addTarget(self, action: #selector(sendRequest), for: .touchUpInside)
 			break
 		case .Deals:
 			let view = dealsView.load()
+			let dv = (view as? DealsSelectionView)!
 			contentView.addSubview(view)
+			dv.cancelButton.addTarget(self, action: #selector(doSomething(_:)), for: .touchUpInside)
+			dv.sendRequest.addTarget(self, action: #selector(sendRequest), for: .touchUpInside)
+			dv.playListOneButton.addTarget(self, action: #selector(changePlaylistSelection(_:)), for: .touchUpInside)
+			dv.playListTwoButton.addTarget(self, action: #selector(changePlaylistSelection(_:)), for: .touchUpInside)
+			dv.playlistThreeButton.addTarget(self, action: #selector(changePlaylistSelection(_:)), for: .touchUpInside)
+			dv.zoneOneButton.addTarget(self, action: #selector(changeZoneLabel(_:)), for: .touchUpInside)
+			dv.zoneTwoButton.addTarget(self, action: #selector(changeZoneLabel(_:)), for: .touchUpInside)
+			dv.zoneThreeButton.addTarget(self, action: #selector(changeZoneLabel(_:)), for: .touchUpInside)
+			dv.zoneFourButton.addTarget(self, action: #selector(changeZoneLabel(_:)), for: .touchUpInside)
+			dv.zoneFiveButton.addTarget(self, action: #selector(changeZoneLabel(_:)), for: .touchUpInside)
+			dv.zoneSixButton.addTarget(self, action: #selector(changeZoneLabel(_:)), for: .touchUpInside)
+			dv.playListOneButton.tag = 101
+			dv.playListTwoButton.tag = 102
+			dv.playlistThreeButton.tag = 103
+			dv.zoneOneButton.tag = 201
+			dv.zoneTwoButton.tag = 202
+			dv.zoneThreeButton.tag = 203
+			dv.zoneFourButton.tag = 204
+			dv.zoneFiveButton.tag = 205
+			dv.zoneSixButton.tag = 206
 			break
 		case .Home:
 			let alert = createAlert(title: "Oops", message: "Something has gone wrong here. Please close and try restarting the app. If issue persists please contact the developer", actionTitle: "OK")
 			present(alert, animated: true)
+			dismiss(animated: true, completion: nil)
 			break
 		}
 		
@@ -101,31 +123,96 @@ class PopUpCardViewController: UIViewController {
 	}
 	
 	@objc func doSomething(_ sender: Any) {
-		print("move")
+		print("SO MOOOVVVEE!!!")
 	}
 	
-	@objc func changeTimeLabel() {
-		timeView.timeSlider.value = roundf(timeView.timeSlider.value)
-		switch(timeView.timeSlider.value) {
-		case 0:
-			timeView.timeSelectionLabel.text = ""
-			interrupt = nil
-		case 1:
-			timeView.timeSelectionLabel.text = "1 Min"
-			interrupt = Interrupt.oneMinuteSign
-		case 2:
-			timeView.timeSelectionLabel.text = "5 Min"
-			interrupt = Interrupt.fiveMinuteSign
-		case 3:
-			timeView.timeSelectionLabel.text = "10 Min"
-			interrupt = Interrupt.tenMinuteSign
+	@objc func changeLabels() {
+		guard let viewState = viewUseState else {return}
+		switch viewState {
+		case .Timer:
+			timeView.timeSlider.value = roundf(timeView.timeSlider.value)
+			switch(timeView.timeSlider.value) {
+			case 0:
+				timeView.timeSelectionLabel.text = ""
+				interrupt = nil
+			case 1:
+				timeView.timeSelectionLabel.text = "1 Min"
+				interrupt = Interrupt.oneMinuteSign
+			case 2:
+				timeView.timeSelectionLabel.text = "5 Min"
+				interrupt = Interrupt.fiveMinuteSign
+			case 3:
+				timeView.timeSelectionLabel.text = "10 Min"
+				interrupt = Interrupt.tenMinuteSign
+			default:
+				break
+			}
+		case .Deals:
+			
+			break
+		case .Home:
+			break
+		}
+		
+	}
+	
+	//MARK:- DealSelectionView Selectors
+	
+	@objc func changePlaylistSelection(_ sender: UIButton) {
+		switch sender.tag {
+		case 101:
+			print("tapped button one")
+			dealsView.playlistLabel.text = "Playlist 1"
+			interrupt = Interrupt.playListOne
+		case 102:
+			print("tapped button two")
+			dealsView.playlistLabel.text = "Playlist 2"
+			interrupt = Interrupt.playListTwo
+		case 103:
+			print("tapped button three")
+			dealsView.playlistLabel.text = "Playlist 3"
+			interrupt = Interrupt.playListThree
 		default:
 			break
 		}
 	}
 	
-	//MARK:- DealSelectionView Selectors
-	
+	@objc func changeZoneLabel(_ sender: UIButton) {
+		switch sender.tag {
+		case 201:
+			print("tapped zone one")
+			dealsView.zoneLabel.text = "Zone 1"
+			playerGroup = PlayerGroupName.Zone1
+			break
+		case 202:
+			print("tapped zone two")
+			dealsView.zoneLabel.text = "Zone 2"
+			playerGroup = PlayerGroupName.Zone2
+			break
+		case 203:
+			print("tapped zone three")
+			dealsView.zoneLabel.text = "Zone 3"
+			playerGroup = PlayerGroupName.Zone3
+			break
+		case 204:
+			print("tapped zone four")
+			dealsView.zoneLabel.text = "Zone 4"
+			playerGroup = PlayerGroupName.Zone4
+			break
+		case 205:
+			print("tapped zone five")
+			dealsView.zoneLabel.text = "Zone 5"
+			playerGroup = PlayerGroupName.Zone5
+			break
+		case 206:
+			print("tapped zone six")
+			dealsView.zoneLabel.text = "Zone 6"
+			playerGroup = PlayerGroupName.Zone6
+			break
+		default:
+			break
+		}
+	}
 	
 }
 
