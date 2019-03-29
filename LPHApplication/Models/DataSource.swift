@@ -18,4 +18,5 @@ struct Features {
 struct TimeSelection {
 	var theatrenName: String
 	var timeToGo: String
+	var theatreGroup: PlayerGroupName
 }

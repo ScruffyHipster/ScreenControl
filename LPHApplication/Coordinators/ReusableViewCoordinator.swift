@@ -41,12 +41,14 @@ class ReusableViewCoordinator: Coordinator {
 	func makeNetworkRequest(group: PlayerGroupName, interrupt: Interrupt) {
 		let request = networking.createRequest(for: group, with: interrupt)
 		networking.sendRequest(url: request) { (success, statusCode) in
-			if success {
+			if success && interrupt != Interrupt.cancel {
 				print("success")
 				self.networkSuccess(with: group, interrupt: interrupt)
-			} else {
+			} else if success == false {
 				self.networkStatusCode = statusCode
 				self.reusableCollectionView.showError(statusCode: statusCode)
+			} else if interrupt == Interrupt.cancel {
+				print("Cancelled")
 			}
 		}
 	}

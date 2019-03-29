@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,9 +39,17 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unselected" translatesAutoresizingMaskIntoConstraints="NO" id="shd-4D-ICp">
+                        <rect key="frame" x="262" y="162" width="28" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="XHi-Gt-YZD"/>
+                            <constraint firstAttribute="width" constant="28" id="ei6-4E-8L6"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="shd-4D-ICp" secondAttribute="bottom" constant="10" id="0HS-LO-6Lc"/>
                 <constraint firstAttribute="trailing" secondItem="ePo-Oo-clU" secondAttribute="trailing" id="6iK-8y-Da3"/>
                 <constraint firstItem="sva-Cp-ysa" firstAttribute="top" secondItem="Ewh-cq-ILT" secondAttribute="top" constant="42" id="7ef-jE-lV6"/>
                 <constraint firstItem="kkw-GA-clw" firstAttribute="top" secondItem="sva-Cp-ysa" secondAttribute="bottom" constant="5" id="8t0-HX-tOi"/>
@@ -54,11 +62,13 @@
                 <constraint firstItem="kkw-GA-clw" firstAttribute="leading" secondItem="Ewh-cq-ILT" secondAttribute="leading" constant="42" id="h0W-gs-dPg"/>
                 <constraint firstItem="ePo-Oo-clU" firstAttribute="top" secondItem="Ewh-cq-ILT" secondAttribute="top" id="jho-kd-JaL"/>
                 <constraint firstItem="sva-Cp-ysa" firstAttribute="leading" secondItem="Ewh-cq-ILT" secondAttribute="leading" constant="42" id="n4i-ag-p9Q"/>
+                <constraint firstAttribute="trailing" secondItem="shd-4D-ICp" secondAttribute="trailing" constant="10" id="q7f-eI-YKJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Aun-ZA-q6x"/>
             <connections>
                 <outlet property="backgroundGradient" destination="3g8-Lt-SWT" id="RXY-v6-m0h"/>
                 <outlet property="cornerRadiusView" destination="ePo-Oo-clU" id="ZcO-pS-KHb"/>
+                <outlet property="selectionImage" destination="shd-4D-ICp" id="8ry-8J-fT8"/>
                 <outlet property="theatreName" destination="sva-Cp-ysa" id="E4H-Wb-QHo"/>
                 <outlet property="timeToGo" destination="kkw-GA-clw" id="HpD-Ig-a87"/>
             </connections>
@@ -67,5 +77,6 @@
     </objects>
     <resources>
         <image name="Blue" width="300" height="200"/>
+        <image name="unselected" width="44" height="44"/>
     </resources>
 </document>

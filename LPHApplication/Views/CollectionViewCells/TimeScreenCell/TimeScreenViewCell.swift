@@ -15,8 +15,21 @@ class TimeScreenViewCell: UICollectionViewCell {
 	@IBOutlet weak var timeToGo: UILabel!
 	@IBOutlet weak var cornerRadiusView: UIView!
 	@IBOutlet weak var backgroundGradient: UIImageView!
+	@IBOutlet weak var selectionImage: UIImageView!
 	
 	var cornerRadius: CGFloat = 20
+	var isEditing: Bool = false {
+		didSet {
+			selectionImage.isHidden = !isEditing
+		}
+	}
+	override var isSelected: Bool {
+		didSet {
+			if isEditing {
+				return selectionImage.image = isSelected ? UIImage(named: "selected") : UIImage(named: "unselected")
+			}
+		}
+	}
 	
 	override func awakeFromNib() {
 		self.layer.shadowOpacity = 0.6

@@ -18,6 +18,7 @@ class DealsViewCell: UICollectionViewCell {
 	
 	//Properties
 	
+	var isEditing: Bool?
 	
 	
 	//Methods

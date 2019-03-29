@@ -62,11 +62,58 @@ class ReusableCollectionViewController: UIViewController {
 	override func setEditing(_ editing: Bool, animated: Bool) {
 		super.setEditing(editing, animated: animated)
 		collectionView.allowsSelection = editing
+		collectionView.allowsMultipleSelection = editing
 		navigationItem.leftBarButtonItem = editing ? UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteItems)) : nil
+		let index = collectionView.indexPathsForVisibleItems
+		guard let viewUse = viewUseState else {return}
+		for indexes in  index {
+			switch viewUse {
+			case ReusableCollectionViewState.Timer:
+				let cell = collectionView.cellForItem(at: indexes) as? TimeScreenViewCell
+				cell?.isEditing = editing
+			case ReusableCollectionViewState.Deals:
+				let cell = collectionView.cellForItem(at: indexes) as? DealsViewCell
+				cell?.isEditing = editing
+			case ReusableCollectionViewState.Home:
+				break
+			}
+		}
 	}
 	
 	@objc func deleteItems() {
-	
+		let selectedCells = collectionView.indexPathsForSelectedItems
+		let alertSheet = UIAlertController(title: "Delete Signs?", message: "Delete the selected shown signs. This will return the signs back to default playlist", preferredStyle: .actionSheet)
+		alertSheet.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+			print("deleting items")
+			guard let selectedCells = selectedCells else {return}
+			let items = selectedCells.map({$0}).sorted().reversed()
+			for item in items {
+				guard let viewUse = self.viewUseState else {return}
+				switch viewUse {
+				case .Timer:
+					let theatreGroup = self.timeSelectionArray[item.row].theatreGroup
+					self.coordinator?.makeNetworkRequest(group: theatreGroup, interrupt: .cancel)
+					self.timeSelectionArray.remove(at: item.row)
+					self.collectionViewDataSource.populateData(with: self.timeSelectionArray)
+					DispatchQueue.main.async {
+						if self.timeSelectionArray.count == 0 {
+							UIView.animate(withDuration: 0.5, animations: {
+								self.instructionLabel.alpha = 1.0
+							})
+						}
+						self.collectionView.reloadData()
+					}
+				case .Deals:
+					break
+				case .Home:
+					break
+				}
+			}
+		}))
+		alertSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+			print("Cancelled the removal of signs")
+		}))
+		present(alertSheet, animated: true)
 	}
 	
 	func showError(statusCode: Int) {
@@ -78,7 +125,8 @@ class ReusableCollectionViewController: UIViewController {
 		guard let viewUseState = viewUseState else {return}
 		switch viewUseState {
 		case ReusableCollectionViewState.Timer:
-			let time = TimeSelection(theatrenName: group.playGroupString, timeToGo: interrupt.interruptString)
+			var time = TimeSelection(theatrenName: group.playGroupString, timeToGo: interrupt.interruptString, theatreGroup: group)
+			time.theatreGroup = group
 			timeSelectionArray.append(time)
 			collectionViewDataSource.populateData(with: timeSelectionArray)
 			instructionLabel.alpha = 0.0
