@@ -15,6 +15,7 @@ class HTTP {
 		var sesh = URLSession.shared
 		return sesh
 	}()
+	var dataTask: URLSessionDataTask?
 	let headers = [
 		"X-SIGNAGELIVE-WBI-APP-ID": "6538d918-fc17-47d6-9394-605d115a95ec",
 		"X-SIGNAGELIVE-WBI-APP-KEY": "2d7fe491-b147-4062-90e6-402d59438373",
@@ -38,7 +39,8 @@ class HTTP {
 	}
 	
 	func sendRequest(url: URLRequest, completion: @escaping (Bool, Int) -> ()) {
-		session.dataTask(with: url) { (data, response, error) in
+		dataTask?.cancel()
+		dataTask = session.dataTask(with: url) { (data, response, error) in
 			guard let response = response as? HTTPURLResponse else {
 				print("failed response")
 				return}
@@ -46,19 +48,27 @@ class HTTP {
 			DispatchQueue.main.async {
 				completion(success, response.statusCode)
 			}
-		} .resume()
+		}
+		dataTask?.resume()
 	}
 	
-		func checkResonse(responseCode: Int) -> Bool {
-			var result = false
-			switch(responseCode) {
-			case 200, 201:
-				result = true
-			case 204, 400, 401, 403, 404, 405, 408, 409, 500, 501, 503:
-				result = false
-			default:
-				break
-			}
-			return result
+	//cancel any currently running tasks
+	func cancelTask() {
+		if dataTask != nil {
+			dataTask?.cancel()
 		}
+	}
+	
+	func checkResonse(responseCode: Int) -> Bool {
+		var result = false
+		switch(responseCode) {
+		case 200, 201:
+			result = true
+		case 204, 400, 401, 403, 404, 405, 408, 409, 500, 501, 503:
+			result = false
+		default:
+			break
+		}
+		return result
+	}
 }

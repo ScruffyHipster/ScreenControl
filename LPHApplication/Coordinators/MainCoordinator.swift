@@ -16,6 +16,10 @@ class MainCoordinator: NSObject, Coordinator {
 	var childCoordinators = [Coordinator]()
 	var networking: HTTP
 	var navigationController: UINavigationController
+	lazy var emergencyViewController: EmergencyViewController = {
+		var ev = EmergencyViewController()
+		return ev
+	}()
 	
 	init(navigationController: UINavigationController) {
 		self.navigationController = navigationController
@@ -49,9 +53,9 @@ class MainCoordinator: NSObject, Coordinator {
 	}
 
 	func emergencyController() {
-		let vc = EmergencyViewController.instantiate()
-		vc.coordinator = self
-		navigationController.pushViewController(vc, animated: true)
+		emergencyViewController = EmergencyViewController.instantiate()
+		emergencyViewController.coordinator = self
+		navigationController.pushViewController(emergencyViewController, animated: true)
 	}
 	
 	func childDidFinish(_ child: Coordinator?) {
@@ -65,6 +69,15 @@ class MainCoordinator: NSObject, Coordinator {
 	
 	//MARK:- Networking
 	func httpRequest(group: PlayerGroupName, interrupt: Interrupt) {
+		let request = networking.createRequest(for: group, with: interrupt)
+		networking.sendRequest(url: request) { (success, statusCode) in
+			if success {
+				print("success")
+				self.emergencyViewController.emergencyInProgress()
+			} else if !success {
+				print("Failed with status code \(statusCode)")
+			}
+		}
 		print("make request for \(group) with interupt \(interrupt)")
 	}
 	

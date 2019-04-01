@@ -11,7 +11,11 @@ import UIKit
 class ReusableCollectionViewController: UIViewController {
 	
 	//MARK:- Outlets
-	@IBOutlet weak var collectionView: UICollectionView!
+	@IBOutlet weak var collectionView: UICollectionView! {
+		didSet {
+			self.collectionView.isScrollEnabled = viewUseState == ReusableCollectionViewState.Timer ? false : true
+		}
+	}
 	@IBOutlet weak var instructionLabel: UILabel! {
 		didSet {
 			if viewUseState == ReusableCollectionViewState.Deals {

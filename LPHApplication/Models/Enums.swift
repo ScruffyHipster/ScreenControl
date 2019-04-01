@@ -182,3 +182,17 @@ enum Interrupt {
 		}
 	}
 }
+
+enum UsableColors {
+	case grey
+	case lightGrey
+	
+	var rgbValue: UIColor {
+		switch self {
+		case .grey:
+			return UIColor(red: 112 / 255, green: 112 / 255, blue: 112 / 255, alpha: 1.0)
+		case .lightGrey:
+			return UIColor(red: 193 / 255, green: 193 / 255, blue: 193 / 255, alpha: 1.0)
+		}
+	}
+}

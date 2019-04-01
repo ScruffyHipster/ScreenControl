@@ -34,4 +34,14 @@ extension UIView {
 	}
 }
 
-
+extension UIButton {
+	func lphSystemButton(title: String) {
+		self.layer.cornerRadius = 8.0
+		self.layer.masksToBounds = true
+		self.backgroundColor = UsableColors.grey.rgbValue
+		self.setTitle(title, for: .normal)
+		self.setTitleColor(.white, for: .normal)
+		self.setTitleColor(UsableColors.lightGrey.rgbValue, for: .disabled)
+		self.titleLabel?.font = UIFont(name: "System", size: 16)
+	}
+}

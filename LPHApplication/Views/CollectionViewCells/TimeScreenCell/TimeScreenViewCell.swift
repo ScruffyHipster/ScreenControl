@@ -34,7 +34,7 @@ class TimeScreenViewCell: UICollectionViewCell {
 	override func awakeFromNib() {
 		self.layer.shadowOpacity = 0.6
 		self.layer.shadowColor = UIColor.black.cgColor
-		self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+		self.layer.shadowOffset = CGSize(width: 0.0, height: -1.0)
 		self.layer.masksToBounds = false
 		cornerRadiusView.layer.cornerRadius = cornerRadius
 		backgroundGradient.layer.cornerRadius = cornerRadius
