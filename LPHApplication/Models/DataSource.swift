@@ -20,3 +20,9 @@ struct TimeSelection {
 	var timeToGo: String
 	var theatreGroup: PlayerGroupName
 }
+
+struct DealSelection {
+	var playlistName: String
+	var zoneName: String
+	var zoneGroup: PlayerGroupName
+}

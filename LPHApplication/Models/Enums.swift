@@ -21,7 +21,7 @@ enum CollectionViewCellIdentifiers {
 		case .TimeScreenCell:
 			return "TimeScreenViewCell"
 		case .DealsScreenCell:
-			return "DealsScreenViewCell"
+			return "DealsViewCell"
 		}
 	}
 }

@@ -44,6 +44,7 @@ class ReusableCollectionViewController: UIViewController {
 	var animationProperties = [UIViewPropertyAnimator]()
 	var animationProgressWasInterrupted: CGFloat = 0
 	var timeSelectionArray = [TimeSelection]()
+	var dealSelectionArray = [DealSelection]()
 	
 	//MARK:- Methods
     override func viewDidLoad() {
@@ -104,7 +105,18 @@ class ReusableCollectionViewController: UIViewController {
 						self.collectionView.reloadData()
 					}
 				case .Deals:
-					break
+					let dealGroup = self.dealSelectionArray[item.row].zoneGroup
+					self.coordinator?.makeNetworkRequest(group: dealGroup, interrupt: .cancel)
+					self.dealSelectionArray.remove(at: item.row)
+					self.collectionViewDataSource.populateData(with: self.dealSelectionArray)
+					DispatchQueue.main.async {
+						if self.dealSelectionArray.count == 0 {
+							UIView.animate(withDuration: 0.5, animations: {
+								self.instructionLabel.alpha = 1.0
+							})
+						}
+					}
+					self.collectionView.reloadData()
 				case .Home:
 					break
 				}
@@ -131,6 +143,10 @@ class ReusableCollectionViewController: UIViewController {
 			collectionViewDataSource.populateData(with: timeSelectionArray)
 			instructionLabel.alpha = 0.0
 		case ReusableCollectionViewState.Deals:
+			let deal = DealSelection(playlistName: group.playGroupString, zoneName: interrupt.interruptString, zoneGroup: group)
+			dealSelectionArray.append(deal)
+			collectionViewDataSource.populateData(with: dealSelectionArray)
+			instructionLabel.alpha = 0.0
 			break
 		case ReusableCollectionViewState.Home:
 			break

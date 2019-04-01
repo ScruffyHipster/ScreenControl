@@ -336,8 +336,8 @@
 		4AC7421F222855B800D1F4D5 /* TimeScreenCell */ = {
 			isa = PBXGroup;
 			children = (
-				4AC74220222855CC00D1F4D5 /* TimeScreenViewCell.xib */,
 				4AC7421D2228555100D1F4D5 /* TimeScreenViewCell.swift */,
+				4AC74220222855CC00D1F4D5 /* TimeScreenViewCell.xib */,
 			);
 			path = TimeScreenCell;
 			sourceTree = "<group>";

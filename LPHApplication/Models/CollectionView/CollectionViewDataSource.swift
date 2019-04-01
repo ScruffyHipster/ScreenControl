@@ -49,9 +49,9 @@ extension CollectionViewDataSource: UICollectionViewDataSource {
 			return cell
 		case ReusableCollectionViewState.Deals:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellIdentifiers.DealsScreenCell.identifier, for: indexPath) as! DealsViewCell
-			//			guard let data = dataArray as? [Features] else {return cell}
-			//			let feature = data[indexPath.row]
-			//			cell.configure(with: feature)
+			guard let data = dataArray as? [DealSelection] else {return cell}
+			let feature = data[indexPath.row]
+			cell.configure(with: feature)
 			return cell
 		}
 	}
