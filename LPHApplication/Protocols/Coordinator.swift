@@ -13,5 +13,6 @@ protocol Coordinator: class {
 	var childCoordinators: [Coordinator] {get set}
 	var navigationController: UINavigationController {get set}
 	var networking: HTTP {get set}
-	func start()
+	func iPhoneStart()
+	func iPadStart()
 }

@@ -26,7 +26,7 @@ class MainCoordinator: NSObject, Coordinator {
 		self.networking = HTTP()
 	}
 	
-	func start() {
+	func iPhoneStart() {
 		let vc = HomeViewController.instantiate()
 		vc.mainCoordinator = self
 		vc.loadView()
@@ -36,12 +36,16 @@ class MainCoordinator: NSObject, Coordinator {
 		navigationController.pushViewController(vc, animated: false)
 	}
 	
+	func iPadStart() {
+		print("starting iPad coordinator")
+	}
+	
 	func timeSelection() {
 		let child = ReusableViewCoordinator(navigationController: navigationController)
 		childCoordinators.append(child)
 		child.parentCoordinator = self
 		child.viewUseState = ReusableCollectionViewState.Timer
-		child.start()
+		child.iPhoneStart()
 }
 	
 	func dealsController() {
@@ -49,7 +53,7 @@ class MainCoordinator: NSObject, Coordinator {
 		child.parentCoordinator = self
 		childCoordinators.append(child)
 		child.viewUseState = ReusableCollectionViewState.Deals
-		child.start()
+		child.iPhoneStart()
 	}
 
 	func emergencyController() {

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class CollectionViewDataSource: NSObject, DataHandler {
+class CollectionViewDataSource: NSObject {
 	
 	var dataArray: [AnyObject]?
 	var cellToUse: ReusableCollectionViewState?

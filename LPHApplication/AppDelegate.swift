@@ -14,14 +14,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 	var coordinator: MainCoordinator?
-
+	var deviceType: DeviceType?
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 		let nav = UINavigationController()
+		if DeviceType.isiPhone {
+			print("device is iPhone")
+			coordinator = MainCoordinator(navigationController: nav)
+			coordinator?.iPhoneStart()
+		} else if DeviceType.isiPad {
+			print("device is iPad")
+			coordinator = MainCoordinator(navigationController: nav)
+			coordinator?.iPadStart()
+		}
 		//Start the coordinator
-		coordinator = MainCoordinator(navigationController: nav)
-		coordinator?.start()
 		//set up window
 		window = UIWindow(frame: UIScreen.main.bounds)
 		window?.rootViewController = nav

@@ -58,7 +58,7 @@ class ReusableViewCoordinator: Coordinator {
 		reusableCollectionView.addToCollectionView(group: group, interrupt: interrupt)
 	}
 	
-	func start() {
+	func iPhoneStart() {
 		reusableCollectionView = ReusableCollectionViewController.instantiate()
 		reusableCollectionView.coordinator = self
 		reusableCollectionView.viewUseState = viewUseState
@@ -67,5 +67,8 @@ class ReusableViewCoordinator: Coordinator {
 		navigationController.pushViewController(reusableCollectionView, animated: true)
 	}
 	
+	func iPadStart() {
+		print("iPad reuse view")
+	}
 	
 }

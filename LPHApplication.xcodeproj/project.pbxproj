@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A2057CC2232DA200094745C /* ReusableViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2057CB2232DA200094745C /* ReusableViewCoordinator.swift */; };
 		4A2057D02232E1580094745C /* SendNetworkRequestButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A2057CF2232E1580094745C /* SendNetworkRequestButton.xib */; };
+		4A548DAE22526B000072197F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A548DAD22526B000072197F /* Device.swift */; };
 		4A57FF74223FCC3300ACEDC3 /* SendNetworkRequestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A57FF73223FCC3300ACEDC3 /* SendNetworkRequestButton.swift */; };
 		4A5E14BF2223F4DD00E1F44E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E14BE2223F4DD00E1F44E /* AppDelegate.swift */; };
 		4A5E14C12223F4DD00E1F44E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E14C02223F4DD00E1F44E /* HomeViewController.swift */; };
@@ -30,7 +31,6 @@
 		4AC742012226C90E00D1F4D5 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC742002226C90E00D1F4D5 /* Storyboarded.swift */; };
 		4AC742042226CC0600D1F4D5 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC742032226CC0600D1F4D5 /* CollectionViewDataSource.swift */; };
 		4AC742062226CC0E00D1F4D5 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC742052226CC0E00D1F4D5 /* DataSource.swift */; };
-		4AC742082226CC9B00D1F4D5 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC742072226CC9B00D1F4D5 /* DataHandler.swift */; };
 		4AC7420A2226CF1700D1F4D5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC742092226CF1700D1F4D5 /* Helpers.swift */; };
 		4AC742112226D8BF00D1F4D5 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC742102226D8BF00D1F4D5 /* Enums.swift */; };
 		4AC742132226DAEE00D1F4D5 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC742122226DAEE00D1F4D5 /* HomeViewCell.xib */; };
@@ -46,6 +46,7 @@
 /* Begin PBXFileReference section */
 		4A2057CB2232DA200094745C /* ReusableViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewCoordinator.swift; sourceTree = "<group>"; };
 		4A2057CF2232E1580094745C /* SendNetworkRequestButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendNetworkRequestButton.xib; sourceTree = "<group>"; };
+		4A548DAD22526B000072197F /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		4A57FF73223FCC3300ACEDC3 /* SendNetworkRequestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNetworkRequestButton.swift; sourceTree = "<group>"; };
 		4A5E14BB2223F4DD00E1F44E /* LPHApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPHApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5E14BE2223F4DD00E1F44E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		4AC742002226C90E00D1F4D5 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		4AC742032226CC0600D1F4D5 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		4AC742052226CC0E00D1F4D5 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		4AC742072226CC9B00D1F4D5 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		4AC742092226CF1700D1F4D5 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		4AC742102226D8BF00D1F4D5 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		4AC742122226DAEE00D1F4D5 /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
@@ -141,6 +141,7 @@
 				4A5E14CD2223F4DE00E1F44E /* Info.plist */,
 				4A5E14C52223F4DD00E1F44E /* LPHApplication.xcdatamodeld */,
 				4AC7421822283AB600D1F4D5 /* Assets.xcassets */,
+				4A548DAD22526B000072197F /* Device.swift */,
 			);
 			path = LPHApplication;
 			sourceTree = "<group>";
@@ -290,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				4AC741FC2226C79100D1F4D5 /* Coordinator.swift */,
-				4AC742072226CC9B00D1F4D5 /* DataHandler.swift */,
 				4AC742002226C90E00D1F4D5 /* Storyboarded.swift */,
 				4ABBD71C222FD79700C803AF /* NIbLoader.swift */,
 			);
@@ -445,7 +445,6 @@
 				4A2057CC2232DA200094745C /* ReusableViewCoordinator.swift in Sources */,
 				4AC7420A2226CF1700D1F4D5 /* Helpers.swift in Sources */,
 				4AC741FF2226C84000D1F4D5 /* MainCoordinator.swift in Sources */,
-				4AC742082226CC9B00D1F4D5 /* DataHandler.swift in Sources */,
 				4ABBD71D222FD79700C803AF /* NIbLoader.swift in Sources */,
 				4ABBD70B222EE4A000C803AF /* EmergencyViewController.swift in Sources */,
 				4AC7421B2228516E00D1F4D5 /* ReusableCollectionViewController.swift in Sources */,
@@ -453,6 +452,7 @@
 				4ABBD718222FC7B600C803AF /* DealsViewCell.swift in Sources */,
 				4AC742172226DB2A00D1F4D5 /* HomeViewCell.swift in Sources */,
 				4AC742012226C90E00D1F4D5 /* Storyboarded.swift in Sources */,
+				4A548DAE22526B000072197F /* Device.swift in Sources */,
 				4AC742322229537D00D1F4D5 /* PopUpCardViewController.swift in Sources */,
 				4ABBD725222FF95500C803AF /* HTTP.swift in Sources */,
 				4AC742062226CC0E00D1F4D5 /* DataSource.swift in Sources */,

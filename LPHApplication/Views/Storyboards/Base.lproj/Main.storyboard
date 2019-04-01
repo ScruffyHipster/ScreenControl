@@ -66,9 +66,8 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0q-rU-7IQ">
-                                <rect key="frame" x="85" y="221" width="244" height="93"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0q-rU-7IQ">
+                                <rect key="frame" x="85" y="221" width="244" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,7 +78,10 @@
                             <constraint firstItem="dgR-rE-EsD" firstAttribute="bottom" secondItem="BEm-la-7Zc" secondAttribute="bottom" id="0ID-LF-FLG"/>
                             <constraint firstItem="BEm-la-7Zc" firstAttribute="top" secondItem="dgR-rE-EsD" secondAttribute="top" id="D3A-li-fMz"/>
                             <constraint firstItem="BEm-la-7Zc" firstAttribute="leading" secondItem="dgR-rE-EsD" secondAttribute="leading" id="GXK-9U-vVB"/>
+                            <constraint firstItem="dgR-rE-EsD" firstAttribute="trailing" secondItem="B0q-rU-7IQ" secondAttribute="trailing" constant="85" id="PKy-dQ-gzi"/>
                             <constraint firstItem="dgR-rE-EsD" firstAttribute="trailing" secondItem="BEm-la-7Zc" secondAttribute="trailing" id="bj7-0I-fiU"/>
+                            <constraint firstItem="B0q-rU-7IQ" firstAttribute="leading" secondItem="dgR-rE-EsD" secondAttribute="leading" constant="85" id="doY-iq-kRZ"/>
+                            <constraint firstItem="B0q-rU-7IQ" firstAttribute="top" secondItem="dgR-rE-EsD" secondAttribute="top" constant="177" id="dzT-eD-LCj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dgR-rE-EsD"/>
                     </view>
@@ -109,7 +111,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GN2-vg-jce">
                                 <rect key="frame" x="107" y="391" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="7X0-cS-b6I"/>
                                     <constraint firstAttribute="height" constant="200" id="Sge-DS-Kl0"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="powerButtonOff"/>
@@ -140,11 +141,11 @@
                             <constraint firstItem="GXK-jI-EO9" firstAttribute="trailing" secondItem="VE0-CF-YxM" secondAttribute="trailing" constant="157" id="5pN-ud-ZVl"/>
                             <constraint firstItem="Vqn-dJ-Qzh" firstAttribute="leading" secondItem="GXK-jI-EO9" secondAttribute="leading" constant="78" id="8dL-vz-Tq0"/>
                             <constraint firstItem="GN2-vg-jce" firstAttribute="leading" secondItem="GXK-jI-EO9" secondAttribute="leading" constant="107" id="NVU-qu-USY"/>
-                            <constraint firstItem="GXK-jI-EO9" firstAttribute="trailing" secondItem="GN2-vg-jce" secondAttribute="trailing" constant="107" id="XzL-rI-E3S"/>
                             <constraint firstItem="VE0-CF-YxM" firstAttribute="leading" secondItem="GXK-jI-EO9" secondAttribute="leading" constant="157" id="YYM-11-36x"/>
                             <constraint firstItem="GN2-vg-jce" firstAttribute="top" secondItem="MbT-Ln-xBG" secondAttribute="top" constant="391" id="cT8-iu-dvF"/>
                             <constraint firstItem="GXK-jI-EO9" firstAttribute="trailing" secondItem="GnQ-2u-CAI" secondAttribute="trailing" constant="157" id="fhj-LC-eK8"/>
                             <constraint firstItem="GXK-jI-EO9" firstAttribute="trailing" secondItem="Vqn-dJ-Qzh" secondAttribute="trailing" constant="77" id="nhS-AU-Av3"/>
+                            <constraint firstItem="GXK-jI-EO9" firstAttribute="trailing" secondItem="GN2-vg-jce" secondAttribute="trailing" constant="107" id="sAa-Hg-toq"/>
                             <constraint firstItem="GnQ-2u-CAI" firstAttribute="leading" secondItem="GXK-jI-EO9" secondAttribute="leading" constant="157" id="yt6-YP-kn7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GXK-jI-EO9"/>
