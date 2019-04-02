@@ -23,6 +23,8 @@ class ReusableViewCoordinator: Coordinator {
 	
 	var networkStatusCode: Int?
 	
+	var deviceType: DeviceTypeModel?
+	
 	init(navigationController: UINavigationController) {
 		self.navigationController = navigationController
 		self.networking = HTTP()
@@ -58,17 +60,29 @@ class ReusableViewCoordinator: Coordinator {
 		reusableCollectionView.addToCollectionView(group: group, interrupt: interrupt)
 	}
 	
-	func iPhoneStart() {
+	func start() {
 		reusableCollectionView = ReusableCollectionViewController.instantiate()
 		reusableCollectionView.coordinator = self
 		reusableCollectionView.viewUseState = viewUseState
 		reusableCollectionView.collectionViewDataSource.cellToUse = viewUseState
-		reusableCollectionView.navigationItem.title = viewUseState == ReusableCollectionViewState.Timer ? "Time Selection" : "Deal Selection"
+		reusableCollectionView.deviceType = deviceType
+		setUpDevice(deviceType!)
 		navigationController.pushViewController(reusableCollectionView, animated: true)
 	}
 	
-	func iPadStart() {
-		print("iPad reuse view")
+	func setUpDevice(_ device: DeviceTypeModel) {
+		switch device {
+		case .iPad:
+			reusableCollectionView.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+			switch reusableCollectionView.tabBarItem.tag {
+			case 0:
+				reusableCollectionView.navigationItem.title = "Time Selection"
+			default:
+				break
+			}
+		case .iPhone:
+			reusableCollectionView.navigationItem.title = viewUseState == ReusableCollectionViewState.Timer ? "Time Selection" : "Deal Selection"
+		}
 	}
 	
 }

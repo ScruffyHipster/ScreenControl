@@ -45,6 +45,7 @@
 		4AF985F922535405007C599E /* HomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF985F822535405007C599E /* HomeViewProtocol.swift */; };
 		4AF985FB225361F8007C599E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF985FA225361F8007C599E /* MainTabBarController.swift */; };
 		4AF985FD22536960007C599E /* EmergencyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF985FC22536960007C599E /* EmergencyCoordinator.swift */; };
+		4AFBFD5D2253C49D00A83BA9 /* TimeSelectorPopOverview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AFBFD5C2253C49D00A83BA9 /* TimeSelectorPopOverview.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		4AF985F822535405007C599E /* HomeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProtocol.swift; sourceTree = "<group>"; };
 		4AF985FA225361F8007C599E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4AF985FC22536960007C599E /* EmergencyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyCoordinator.swift; sourceTree = "<group>"; };
+		4AFBFD5C2253C49D00A83BA9 /* TimeSelectorPopOverview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TimeSelectorPopOverview.xib; path = "LPHApplication/Views/ViewNibs/New Group/TimeSelectorPopOverview.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				4A5E14C02223F4DD00E1F44E /* HomeViewController.swift */,
-				4AF985F822535405007C599E /* HomeViewProtocol.swift */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -305,6 +306,7 @@
 				4AC741FC2226C79100D1F4D5 /* Coordinator.swift */,
 				4AC742002226C90E00D1F4D5 /* Storyboarded.swift */,
 				4ABBD71C222FD79700C803AF /* NIbLoader.swift */,
+				4AF985F822535405007C599E /* HomeViewProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -357,6 +359,7 @@
 		4AC742342229538900D1F4D5 /* ViewNibs */ = {
 			isa = PBXGroup;
 			children = (
+				4AFBFD5B2253C47C00A83BA9 /* iPadPopOverView */,
 				4A2057CD2232E1350094745C /* Buttons */,
 				4ABBD71F222FF82C00C803AF /* PopUpCardView */,
 			);
@@ -369,6 +372,14 @@
 				4AC742302229537D00D1F4D5 /* PopUpCardViewController.swift */,
 			);
 			path = PopUpCardVC;
+			sourceTree = "<group>";
+		};
+		4AFBFD5B2253C47C00A83BA9 /* iPadPopOverView */ = {
+			isa = PBXGroup;
+			children = (
+				4AFBFD5C2253C49D00A83BA9 /* TimeSelectorPopOverview.xib */,
+			);
+			path = iPadPopOverView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +450,7 @@
 				4A5E14CC2223F4DE00E1F44E /* LaunchScreen.storyboard in Resources */,
 				4AC742132226DAEE00D1F4D5 /* HomeViewCell.xib in Resources */,
 				4AC7421922283AB700D1F4D5 /* Assets.xcassets in Resources */,
+				4AFBFD5D2253C49D00A83BA9 /* TimeSelectorPopOverview.xib in Resources */,
 				4A5E14C42223F4DD00E1F44E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

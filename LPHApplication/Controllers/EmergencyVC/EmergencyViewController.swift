@@ -23,6 +23,7 @@ class EmergencyViewController: UIViewController {
 	
 	//MARK:- Properties
 	weak var coordinator: MainCoordinator?
+	weak var tempCoordinator: EmergencyCoordinator?
 	var emergency: Bool = false {
 		didSet {
 			sendButton.isEnabled = self.emergency ? true : false
@@ -38,6 +39,7 @@ class EmergencyViewController: UIViewController {
 	let playerGroup: PlayerGroupName = .all
 	let interrupt: Interrupt = .emergency
 	let cancel: Interrupt = .cancel
+	var deviceType: DeviceTypeModel?
 	
 
 	

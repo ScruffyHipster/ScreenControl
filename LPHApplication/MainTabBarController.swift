@@ -11,13 +11,14 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 	
-	var mainCoordinator: MainCoordinator?
+	
 	var reusableCoordinator: ReusableViewCoordinator?
 	var emergencyCoordinator: EmergencyCoordinator?
 	
 	func loadViewControllers() {
-		guard let mainCoor = mainCoordinator else {return}
-		mainCoor.start()
-		viewControllers = [mainCoor.navigationController]
+		guard let reusableCoordinator = reusableCoordinator, let emergencyCoordinator = emergencyCoordinator else {return}
+		reusableCoordinator.start()
+		emergencyCoordinator.start()
+		viewControllers = [reusableCoordinator.navigationController, emergencyCoordinator.navigationController]
 	}
 }

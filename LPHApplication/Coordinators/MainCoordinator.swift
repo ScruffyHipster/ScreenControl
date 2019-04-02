@@ -39,13 +39,7 @@ class MainCoordinator: NSObject, Coordinator {
 			navigationController.pushViewController(vc, animated: false)
 			break
 		case .iPad:
-			let vc = HomeViewController.instantiateIpad()
-			vc.loadView()
-			vc.mainCoordinator = self
-			vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
-			navigationController.delegate = self
-			navigationController.navigationBar.prefersLargeTitles = true
-			navigationController.pushViewController(vc, animated: false)
+			//Might be used at some point, leave here for now and remove if useless
 			break
 		}
 	}
@@ -54,16 +48,18 @@ class MainCoordinator: NSObject, Coordinator {
 		let child = ReusableViewCoordinator(navigationController: navigationController)
 		childCoordinators.append(child)
 		child.parentCoordinator = self
+		child.deviceType = deviceType
 		child.viewUseState = ReusableCollectionViewState.Timer
-		child.iPhoneStart()
+		child.start()
 }
 	
 	func dealsController() {
 		let child = ReusableViewCoordinator(navigationController: navigationController)
 		child.parentCoordinator = self
+		child.deviceType = deviceType
 		childCoordinators.append(child)
 		child.viewUseState = ReusableCollectionViewState.Deals
-		child.iPhoneStart()
+		child.start()
 	}
 
 	func emergencyController() {

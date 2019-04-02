@@ -34,6 +34,8 @@ class ReusableCollectionViewController: UIViewController {
 	}()
 	//State of use
 	var viewUseState: ReusableCollectionViewState?
+	//Device type
+	var deviceType: DeviceTypeModel?
 	//Popupview
 	var popUpcardView: PopUpCardViewController?
 	var popUpCardHandleArea: CGFloat = 65
@@ -55,12 +57,25 @@ class ReusableCollectionViewController: UIViewController {
         super.viewDidLoad()
 		setUpCollectionView()
 		loadNibs()
-		setUpPopUpView()
+		guard let deviceType = deviceType else {return}
+		switch deviceType {
+		case .iPhone:
+			setUpPopUpView()
+		case .iPad:
+			print("iPad view has no pop up")
+		}
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		navigationItem.rightBarButtonItem = editButtonItem
+		guard let deviceType = deviceType else {return}
+		switch deviceType {
+		case .iPhone:
+			navigationItem.rightBarButtonItem = editButtonItem
+		case .iPad:
+			navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+		}
+		
 	}
 
 	
@@ -197,7 +212,6 @@ class ReusableCollectionViewController: UIViewController {
 		layout.minimumLineSpacing = 12.0
 		layout.minimumInteritemSpacing = 10.0
 	}
-	
 	
 	//MARK:- Pop up view
 	func setUpPopUpView() {
