@@ -19,19 +19,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 		let nav = UINavigationController()
+		window = UIWindow(frame: UIScreen.main.bounds)
+		//Start the coordinator
+		coordinator = MainCoordinator(navigationController: nav)
+		
 		if DeviceType.isiPhone {
 			print("device is iPhone")
-			coordinator = MainCoordinator(navigationController: nav)
-			coordinator?.iPhoneStart()
+			coordinator?.deviceType = DeviceTypeModel.iPhone
+			window?.rootViewController = nav
+			coordinator?.start()
 		} else if DeviceType.isiPad {
 			print("device is iPad")
-			coordinator = MainCoordinator(navigationController: nav)
-			coordinator?.iPadStart()
+			let tabController = MainTabBarController()
+			tabController.mainCoordinator = coordinator
+			coordinator?.deviceType = DeviceTypeModel.iPad
+			tabController.loadViewControllers()
+			window?.rootViewController = tabController
 		}
-		//Start the coordinator
 		//set up window
-		window = UIWindow(frame: UIScreen.main.bounds)
-		window?.rootViewController = nav
 		window?.makeKeyAndVisible()
 		return true
 	}

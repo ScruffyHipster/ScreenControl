@@ -196,3 +196,8 @@ enum UsableColors {
 		}
 	}
 }
+
+enum DeviceTypeModel {
+	case iPhone
+	case iPad
+}

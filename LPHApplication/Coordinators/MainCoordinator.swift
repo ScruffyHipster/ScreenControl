@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class MainCoordinator: NSObject, Coordinator {
-	
 	static var dataArray: [AnyObject]?
 	
 	var childCoordinators = [Coordinator]()
 	var networking: HTTP
+	var deviceType: DeviceTypeModel?
 	var navigationController: UINavigationController
 	lazy var emergencyViewController: EmergencyViewController = {
 		var ev = EmergencyViewController()
@@ -26,18 +26,28 @@ class MainCoordinator: NSObject, Coordinator {
 		self.networking = HTTP()
 	}
 	
-	func iPhoneStart() {
-		let vc = HomeViewController.instantiate()
-		vc.mainCoordinator = self
-		vc.loadView()
-		vc.setUpCollectionView()
-		navigationController.delegate = self
-		navigationController.navigationBar.prefersLargeTitles = true
-		navigationController.pushViewController(vc, animated: false)
-	}
-	
-	func iPadStart() {
-		print("starting iPad coordinator")
+	func start() {
+		guard let device = deviceType else {return}
+		switch device {
+		case .iPhone:
+			let vc = HomeViewController.instantiate()
+			vc.loadView()
+			vc.setUpCollectionView()
+			vc.mainCoordinator = self
+			navigationController.delegate = self
+			navigationController.navigationBar.prefersLargeTitles = true
+			navigationController.pushViewController(vc, animated: false)
+			break
+		case .iPad:
+			let vc = HomeViewController.instantiateIpad()
+			vc.loadView()
+			vc.mainCoordinator = self
+			vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+			navigationController.delegate = self
+			navigationController.navigationBar.prefersLargeTitles = true
+			navigationController.pushViewController(vc, animated: false)
+			break
+		}
 	}
 	
 	func timeSelection() {

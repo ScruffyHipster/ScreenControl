@@ -41,6 +41,10 @@
 		4AC74221222855CC00D1F4D5 /* TimeScreenViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC74220222855CC00D1F4D5 /* TimeScreenViewCell.xib */; };
 		4AC742322229537D00D1F4D5 /* PopUpCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC742302229537D00D1F4D5 /* PopUpCardViewController.swift */; };
 		4AC742332229537D00D1F4D5 /* PopUpCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC742312229537D00D1F4D5 /* PopUpCardViewController.xib */; };
+		4AF985F522535289007C599E /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF985F422535289007C599E /* iPadStoryboard.storyboard */; };
+		4AF985F922535405007C599E /* HomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF985F822535405007C599E /* HomeViewProtocol.swift */; };
+		4AF985FB225361F8007C599E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF985FA225361F8007C599E /* MainTabBarController.swift */; };
+		4AF985FD22536960007C599E /* EmergencyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF985FC22536960007C599E /* EmergencyCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		4AC74220222855CC00D1F4D5 /* TimeScreenViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeScreenViewCell.xib; sourceTree = "<group>"; };
 		4AC742302229537D00D1F4D5 /* PopUpCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpCardViewController.swift; sourceTree = "<group>"; };
 		4AC742312229537D00D1F4D5 /* PopUpCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpCardViewController.xib; sourceTree = "<group>"; };
+		4AF985F422535289007C599E /* iPadStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPadStoryboard.storyboard; sourceTree = "<group>"; };
+		4AF985F822535405007C599E /* HomeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProtocol.swift; sourceTree = "<group>"; };
+		4AF985FA225361F8007C599E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		4AF985FC22536960007C599E /* EmergencyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +145,7 @@
 				4AC741F92226C76C00D1F4D5 /* Coordinators */,
 				4AC741F82226C76200D1F4D5 /* Controllers */,
 				4A5E14BE2223F4DD00E1F44E /* AppDelegate.swift */,
+				4AF985FA225361F8007C599E /* MainTabBarController.swift */,
 				4A5E14CA2223F4DE00E1F44E /* LaunchScreen.storyboard */,
 				4A5E14CD2223F4DE00E1F44E /* Info.plist */,
 				4A5E14C52223F4DD00E1F44E /* LPHApplication.xcdatamodeld */,
@@ -200,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				4A5E14C22223F4DD00E1F44E /* Main.storyboard */,
+				4AF985F422535289007C599E /* iPadStoryboard.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -246,6 +256,7 @@
 			children = (
 				4AC741FE2226C84000D1F4D5 /* MainCoordinator.swift */,
 				4A2057CB2232DA200094745C /* ReusableViewCoordinator.swift */,
+				4AF985FC22536960007C599E /* EmergencyCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -275,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				4A5E14C02223F4DD00E1F44E /* HomeViewController.swift */,
+				4AF985F822535405007C599E /* HomeViewProtocol.swift */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -422,6 +434,7 @@
 				4A2057D02232E1580094745C /* SendNetworkRequestButton.xib in Resources */,
 				4AC74221222855CC00D1F4D5 /* TimeScreenViewCell.xib in Resources */,
 				4ABBD71A222FC7C000C803AF /* DealsViewCell.xib in Resources */,
+				4AF985F522535289007C599E /* iPadStoryboard.storyboard in Resources */,
 				4AC742332229537D00D1F4D5 /* PopUpCardViewController.xib in Resources */,
 				4A5E14CC2223F4DE00E1F44E /* LaunchScreen.storyboard in Resources */,
 				4AC742132226DAEE00D1F4D5 /* HomeViewCell.xib in Resources */,
@@ -449,6 +462,7 @@
 				4ABBD70B222EE4A000C803AF /* EmergencyViewController.swift in Sources */,
 				4AC7421B2228516E00D1F4D5 /* ReusableCollectionViewController.swift in Sources */,
 				4A5E14BF2223F4DD00E1F44E /* AppDelegate.swift in Sources */,
+				4AF985FB225361F8007C599E /* MainTabBarController.swift in Sources */,
 				4ABBD718222FC7B600C803AF /* DealsViewCell.swift in Sources */,
 				4AC742172226DB2A00D1F4D5 /* HomeViewCell.swift in Sources */,
 				4AC742012226C90E00D1F4D5 /* Storyboarded.swift in Sources */,
@@ -459,7 +473,9 @@
 				4AC742112226D8BF00D1F4D5 /* Enums.swift in Sources */,
 				4AC7421E2228555100D1F4D5 /* TimeScreenViewCell.swift in Sources */,
 				4ABBD70D222EEA7B00C803AF /* DealsViewController.swift in Sources */,
+				4AF985F922535405007C599E /* HomeViewProtocol.swift in Sources */,
 				4AC742042226CC0600D1F4D5 /* CollectionViewDataSource.swift in Sources */,
+				4AF985FD22536960007C599E /* EmergencyCoordinator.swift in Sources */,
 				4ABBD716222FC65B00C803AF /* DealsSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

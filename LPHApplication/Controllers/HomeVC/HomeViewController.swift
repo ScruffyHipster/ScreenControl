@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, HomeViewProtocol {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	
