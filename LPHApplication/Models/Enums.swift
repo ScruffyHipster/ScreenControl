@@ -28,8 +28,14 @@ enum CollectionViewCellIdentifiers {
 
 enum ViewControllerNibIdentifiers {
 	case popUpCardViewController
+	case formSheetView
 	var identifier: String {
+		switch self {
+		case .popUpCardViewController:
 		return "PopUpCardViewController"
+		case .formSheetView:
+			return "FormSheetViewController"
+		}
 	}
 }
 

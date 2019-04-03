@@ -13,6 +13,7 @@ class PopUpCardViewController: UIViewController {
 	
 	//MARK:- Properties
 	var viewUseState: ReusableCollectionViewState?
+	var deviceType: DeviceTypeModel?
 	var coordinator: ReusableViewCoordinator?
 	
 	var interrupt: Interrupt?
@@ -39,19 +40,9 @@ class PopUpCardViewController: UIViewController {
     }
 	
 	func setUpView() {
-		self.handleView.layer.cornerRadius = 2
-		self.handleArea.layer.cornerRadius =  20
-		self.handleView.clipsToBounds = true
-		self.handleArea.clipsToBounds = true
-		self.handleView.backgroundColor = UIColor(red: 159/255, green: 159/255, blue: 159/255, alpha: 1.0)
-		//Add shadow
-		self.view.layer.shadowColor = UIColor.black.cgColor
-		self.view.layer.shadowOpacity = 0.4
-		self.view.layer.shadowOffset = CGSize(width: 0, height: -2)
-		self.view.layer.masksToBounds = false
-		self.view.backgroundColor = UIColor.clear
 		//Set state
 		guard let viewState = viewUseState else {return}
+		guard let deviceType = deviceType else {return}
 		switch viewState {
 		case .Timer:
 			let view = timeView.load()
@@ -93,7 +84,23 @@ class PopUpCardViewController: UIViewController {
 			dismiss(animated: true, completion: nil)
 			break
 		}
-		
+		switch deviceType {
+		case .iPad:
+			break
+		case .iPhone:
+			self.handleView.layer.cornerRadius = 2
+			self.handleArea.layer.cornerRadius =  20
+			self.handleView.clipsToBounds = true
+			self.handleArea.clipsToBounds = true
+			self.handleView.backgroundColor = UIColor(red: 159/255, green: 159/255, blue: 159/255, alpha: 1.0)
+			//Add shadow
+			self.view.layer.shadowColor = UIColor.black.cgColor
+			self.view.layer.shadowOpacity = 0.4
+			self.view.layer.shadowOffset = CGSize(width: 0, height: -2)
+			self.view.layer.masksToBounds = false
+			self.view.backgroundColor = UIColor.clear
+			break
+		}
 	}
 	
 	@objc func sendRequest() {

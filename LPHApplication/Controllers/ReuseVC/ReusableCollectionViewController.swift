@@ -62,7 +62,7 @@ class ReusableCollectionViewController: UIViewController {
 		case .iPhone:
 			setUpPopUpView()
 		case .iPad:
-			print("iPad view has no pop up")
+			setUpPopupView()
 		}
     }
 	
@@ -73,7 +73,7 @@ class ReusableCollectionViewController: UIViewController {
 		case .iPhone:
 			navigationItem.rightBarButtonItem = editButtonItem
 		case .iPad:
-			navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+			navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddTime))
 		}
 		
 	}
@@ -98,6 +98,10 @@ class ReusableCollectionViewController: UIViewController {
 				break
 			}
 		}
+	}
+	
+	@objc func didTapAddTime() {
+		present(popUpcardView!, animated: true)
 	}
 	
 	@objc func deleteItems() {
@@ -181,9 +185,18 @@ class ReusableCollectionViewController: UIViewController {
 		collectionView.isScrollEnabled = false
 	}
 	
+	
+	
 	func loadNibs() {
-		popUpcardView = PopUpCardViewController(nibName: ViewControllerNibIdentifiers.popUpCardViewController.identifier, bundle: nil)
-		guard let viewUse = viewUseState, let coord = coordinator else {return}
+		guard let viewUse = viewUseState, let coord = coordinator, let deviceType = deviceType else {return}
+		switch deviceType {
+		case .iPhone:
+			popUpcardView = PopUpCardViewController(nibName: ViewControllerNibIdentifiers.popUpCardViewController.identifier, bundle: nil)
+		case .iPad:
+			popUpcardView = PopUpCardViewController(nibName: ViewControllerNibIdentifiers.formSheetView.identifier, bundle: nil)
+		}
+		//Set device type
+		popUpcardView?.deviceType = deviceType
 		//Sets popup view to correct use state
 		popUpcardView?.viewUseState = viewUse
 		//Sets the coordinator
@@ -214,6 +227,11 @@ class ReusableCollectionViewController: UIViewController {
 	}
 	
 	//MARK:- Pop up view
+	func setUpPopupView() {
+		guard let cardView = popUpcardView else {return}
+		cardView.modalPresentationStyle = .formSheet
+	}
+	
 	func setUpPopUpView() {
 		guard let popUpView = popUpcardView else {return}
 		self.addChild(popUpView)

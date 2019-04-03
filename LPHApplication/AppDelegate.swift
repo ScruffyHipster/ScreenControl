@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			reusableCoordinator = ReusableViewCoordinator(navigationController: UINavigationController())
 			emergencyCoordinator = EmergencyCoordinator(navigationController: UINavigationController())
 			tabController.reusableCoordinator = reusableCoordinator
+			tabController.reusableCoordinator2 = reusableCoordinator
 			tabController.emergencyCoordinator = emergencyCoordinator
 			reusableCoordinator?.deviceType = DeviceTypeModel.iPad
 			emergencyCoordinator?.deviceType = DeviceTypeModel.iPad
