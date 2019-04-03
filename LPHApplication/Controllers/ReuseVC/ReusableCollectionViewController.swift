@@ -229,7 +229,8 @@ class ReusableCollectionViewController: UIViewController {
 	//MARK:- Pop up view
 	func setUpPopupView() {
 		guard let cardView = popUpcardView else {return}
-		cardView.modalPresentationStyle = .formSheet
+		cardView.modalPresentationStyle = .popover
+		
 	}
 	
 	func setUpPopUpView() {

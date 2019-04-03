@@ -71,13 +71,17 @@ class ReusableViewCoordinator: Coordinator {
 	}
 	
 	func setUpDevice(_ device: DeviceTypeModel) {
+		guard let viewUseState = viewUseState else {return}
 		switch device {
 		case .iPad:
-			reusableCollectionView.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
-			switch reusableCollectionView.tabBarItem.tag {
-			case 0:
+			switch viewUseState {
+			case .Timer:
+				reusableCollectionView.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
 				reusableCollectionView.navigationItem.title = "Time Selection"
-			default:
+			case .Deals:
+				reusableCollectionView.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 2)
+				reusableCollectionView.navigationItem.title = "Deal selection"
+			case .Home:
 				break
 			}
 		case .iPhone:

@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var coordinator: MainCoordinator?
 	//This coordinator acts as the iPads main Coordinator as it has no home screen. 
 	var reusableCoordinator: ReusableViewCoordinator?
+	var reusableCoordinator2: ReusableViewCoordinator?
 	var emergencyCoordinator: EmergencyCoordinator?
 	var deviceType: DeviceType?
 
@@ -32,14 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			coordinator?.start()
 		} else if DeviceType.isiPad {
 			print("device is iPad")
+			let model = DeviceTypeModel.iPad
 			let tabController = MainTabBarController()
 			reusableCoordinator = ReusableViewCoordinator(navigationController: UINavigationController())
+			reusableCoordinator2 = ReusableViewCoordinator(navigationController: UINavigationController())
 			emergencyCoordinator = EmergencyCoordinator(navigationController: UINavigationController())
 			tabController.reusableCoordinator = reusableCoordinator
-			tabController.reusableCoordinator2 = reusableCoordinator
+			tabController.reusableCoordinator2 = reusableCoordinator2
 			tabController.emergencyCoordinator = emergencyCoordinator
-			reusableCoordinator?.deviceType = DeviceTypeModel.iPad
-			emergencyCoordinator?.deviceType = DeviceTypeModel.iPad
+			reusableCoordinator?.deviceType = model
+			reusableCoordinator2?.deviceType = model
+			emergencyCoordinator?.deviceType = model
 			tabController.loadViewControllers()
 			window?.rootViewController = tabController
 		}
